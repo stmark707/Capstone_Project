@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RuckSack</class>
+ <widget class="QMainWindow" name="RuckSack">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: #092D80;</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,2">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="title_frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,2,1">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>174</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="agilestock_label">
+         <property name="styleSheet">
+          <string notr="true">color:#ffffff;
+font-family: &quot;Orbitron&quot;, sans-serif;
+font-size: 28px;
+</string>
+         </property>
+         <property name="text">
+          <string>AgileStock</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="user_level_frame">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,1,1">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="user_level_title_icon">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>icons8-user-30.png</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="user_level_static_label">
+            <property name="styleSheet">
+             <string notr="true">color:#ffffff;
+font-family: &quot;Orbitron&quot;, sans-serif;
+font-size: 20px;
+</string>
+            </property>
+            <property name="text">
+             <string>User Level:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="user_level_dynamic_label">
+            <property name="styleSheet">
+             <string notr="true">color:#ffffff;
+font-family: &quot;Orbitron&quot;, sans-serif;
+font-size: 20px;
+</string>
+            </property>
+            <property name="text">
+             <string>Guest</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="main_component_frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,1">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="sidebar_frame">
+         <property name="styleSheet">
+          <string notr="true">/*background-color: #8496C0;&lt;- older hue*/ 
+background-color: #536Ca6;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <property name="leftMargin">
+           <number>3</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>3</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="horizontalSpacing">
+           <number>4</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>2</number>
+          </property>
+          <item row="3" column="1">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::MinimumExpanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>143</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="add_item_tab_button">
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton#add_item_tab_button
+{
+	color: #ffffff;
+	font-family: &quot;SourceSans3&quot;, sans-serif;
+	font-size: 19px;
+	font-weight: 400;
+	text-align: left;
+	border: 0;
+ 	background: none;
+	box-shadow: none;
+	border-radius: 0px;
+}
+
+QPushButton:hover:!pressed#add_item_tab_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #C46A33, stop: 0.1 #FF8500, stop: 0.5 #FF7500 stop: 1 #FF6500, stop: 1 #C46A33);
+	
+
+}</string>
+            </property>
+            <property name="text">
+             <string>Add Items</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="remove_item_tab_button">
+            <property name="font">
+             <font>
+              <family>SourceSans3,sans-serif</family>
+              <pointsize>-1</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton#remove_item_tab_button
+{
+	color: #ffffff;
+	font-family: &quot;SourceSans3&quot;, sans-serif;
+	font-size: 19px;
+	font-weight: 400;
+	text-align: left;
+	border: 0;
+ 	background: none;
+ 	box-shadow: none;
+ 	border-radius: 0px;
+}
+
+QPushButton:hover:!pressed#remove_item_tab_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #C46A33, stop: 0.1 #FF8500, stop: 0.5 		#FF7500 stop: 1 #FF6500, stop: 1 #C46A33);
+}</string>
+            </property>
+            <property name="text">
+             <string>Remove Items</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QPushButton" name="view_items_tab_button">
+            <property name="styleSheet">
+             <string notr="true">QPushButton#view_items_tab_button
+{
+	color: #ffffff;
+	font-family: &quot;SourceSans3&quot;, sans-serif;
+	font-size: 19px;
+	font-weight: 400;
+	text-align: left;
+	border: 0;
+	background: none;
+	box-shadow: none;
+	border-radius: 0px;
+}
+
+QPushButton:hover:!pressed#view_items_tab_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #C46A33, stop: 0.1 #FF8500, stop: 0.5 #FF7500 stop: 1 #FF6500, stop: 1 #C46A33);
+}</string>
+            </property>
+            <property name="text">
+             <string>View Items</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QPushButton" name="change_user_level_button">
+            <property name="styleSheet">
+             <string notr="true">QPushButton#change_user_level_button
+{
+	color: #ffffff;
+	font-family: &quot;SourceSans3&quot;, sans-serif;
+	font-size: 19px;
+	font-weight: 400;
+	
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #6b81b3, stop: 0.1 #092d80, stop: 0.5 #6b81b3 stop: 1 #092d80, stop: 1 #092d80);
+	border-style: outset;
+	border-width: 1px;
+	border-color:black;
+	padding: 6px;
+	outline-offset: 4px;
+	border-radius: 4px;
+
+}
+
+QPushButton:hover:!pressed#change_user_level_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #C46A33, stop: 0.1 #FF8500, stop: 0.5 #FF7500 stop: 1 #FF6500, stop: 1 #C46A33);
+}</string>
+            </property>
+            <property name="text">
+             <string>Admin Login</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Maximum</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="user_level_icon">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>icons8-user-20.png</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="view_item_icon">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>icons8-view-20.png</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="remove_item_icon">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>icons8-minus-20.png</pixmap>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="add_item_icon">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>icons8-add-20.png</pixmap>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="stacked_widget_frame">
+         <property name="styleSheet">
+          <string notr="true">background-color: #ffffff;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QStackedWidget" name="stackedWidget">
+            <widget class="QWidget" name="add_item_page">
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <property name="spacing">
+               <number>8</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="scan_barcode_frame">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="manually_add_item_frame">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="remove_item_page"/>
+            <widget class="QWidget" name="view_item_page"/>
+            <widget class="QWidget" name="change_user_page"/>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
