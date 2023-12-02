@@ -41,7 +41,7 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,2,1">
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,2,0">
        <property name="spacing">
         <number>0</number>
        </property>
@@ -96,7 +96,7 @@ font-size: 28px;
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,1,1">
           <property name="spacing">
-           <number>4</number>
+           <number>8</number>
           </property>
           <property name="leftMargin">
            <number>0</number>
@@ -105,7 +105,7 @@ font-size: 28px;
            <number>0</number>
           </property>
           <property name="rightMargin">
-           <number>0</number>
+           <number>11</number>
           </property>
           <property name="bottomMargin">
            <number>0</number>
@@ -125,7 +125,7 @@ font-size: 28px;
             <property name="styleSheet">
              <string notr="true">color:#ffffff;
 font-family: &quot;Orbitron&quot;, sans-serif;
-font-size: 20px;
+font-size: 15px;
 </string>
             </property>
             <property name="text">
@@ -138,14 +138,14 @@ font-size: 20px;
             <property name="styleSheet">
              <string notr="true">color:#ffffff;
 font-family: &quot;Orbitron&quot;, sans-serif;
-font-size: 20px;
+font-size: 15px;
 </string>
             </property>
             <property name="text">
              <string>Guest</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
             </property>
            </widget>
           </item>
@@ -452,7 +452,7 @@ border-radius: 5px;</string>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,1">
                  <property name="spacing">
                   <number>4</number>
                  </property>
@@ -498,9 +498,9 @@ background-color: #fafbfc;
                      <number>4</number>
                     </property>
                     <item row="1" column="1">
-                     <widget class="QFrame" name="barcode_status_frame">
+                     <widget class="QFrame" name="barcode_output_frame">
                       <property name="styleSheet">
-                       <string notr="true">background-color: #e8d385;
+                       <string notr="true">background-color: #85e8a1;
 border-radius: 5px;</string>
                       </property>
                       <property name="frameShape">
@@ -526,7 +526,7 @@ border-radius: 5px;</string>
                         <number>4</number>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_5">
+                        <widget class="QLabel" name="static_scanned_item_label">
                          <property name="styleSheet">
                           <string notr="true">color: Black;
 font-family: &quot;SourceSansPro-Bold&quot;;
@@ -540,10 +540,13 @@ font-size: 12px;</string>
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>
                          </property>
+                         <property name="wordWrap">
+                          <bool>true</bool>
+                         </property>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_2">
+                        <widget class="QLabel" name="dynamic_scanned_item_label">
                          <property name="styleSheet">
                           <string notr="true">color: Black;
 font-family: &quot;SourceSansPro-Bold&quot;;
@@ -558,15 +561,18 @@ background-color: #ffffff;</string>
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>
                          </property>
+                         <property name="wordWrap">
+                          <bool>true</bool>
+                         </property>
                         </widget>
                        </item>
                       </layout>
                      </widget>
                     </item>
                     <item row="1" column="0">
-                     <widget class="QFrame" name="frame_2">
+                     <widget class="QFrame" name="barcode_connection_frame">
                       <property name="styleSheet">
-                       <string notr="true">background-color: #85e8a1;
+                       <string notr="true">background-color: #e8d385;
 </string>
                       </property>
                       <property name="frameShape">
@@ -592,14 +598,66 @@ background-color: #ffffff;</string>
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QPushButton" name="pushButton">
+                        <widget class="QPushButton" name="connect_devices_button">
+                         <property name="styleSheet">
+                          <string notr="true">QPushButton#connect_devices_button
+{	
+
+color: White;
+	font-family: &quot;SourceSansPro-Bold&quot;;
+	font-weight: 600;
+	font-size: 10px;
+
+
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98FF99, stop: 0.1 #78C26B, stop: 0.5 #4DB044, stop: 1 #4DB044, stop: 1 #248423);
+	border-style: outset;
+	border-width: 1px;
+	border-color:black;
+	padding: 6px;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+QPushButton:hover:!pressed#connect_devices_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #335A44, stop: 0.1 #78C26B, stop: 0.5 #4DB044, stop: 1 #4DB044, stop: 1 #335A44);
+	border-color:white;
+}
+</string>
+                         </property>
                          <property name="text">
                           <string>Connect Device</string>
                          </property>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QPushButton" name="pushButton_2">
+                        <widget class="QPushButton" name="disconnect_devices_button">
+                         <property name="styleSheet">
+                          <string notr="true">QPushButton#disconnect_devices_button
+{	
+
+	color: White;
+	font-family: &quot;SourceSansPro-Bold&quot;;
+	font-weight: 600;
+	font-size: 10px;
+
+
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFD1AD, stop: 0.1 #FF8500, stop: 0.5 #FF7500 stop: 1 #FF6500, stop: 1 #FF5500);
+	border-style: outset;
+	border-width: 1px;
+	border-color:black;
+	padding: 6px;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+QPushButton:hover:!pressed#disconnect_devices_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #C46A33, stop: 0.1 #FF8500, stop: 0.5 #FF7500 stop: 1 #FF6500, stop: 1 #C46A33);
+	border-color:white;
+}
+</string>
+                         </property>
                          <property name="text">
                           <string>Disconnect Device</string>
                          </property>
@@ -609,7 +667,7 @@ background-color: #ffffff;</string>
                      </widget>
                     </item>
                     <item row="0" column="1">
-                     <widget class="QFrame" name="frame_3">
+                     <widget class="QFrame" name="barcode_status_message_frame">
                       <property name="styleSheet">
                        <string notr="true">border-radius: 5px;
 background-color: #bccae7;</string>
@@ -637,7 +695,7 @@ background-color: #bccae7;</string>
                         <number>5</number>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_4">
+                        <widget class="QLabel" name="static_discrete_io_label">
                          <property name="styleSheet">
                           <string notr="true">color: Black;
 font-family: &quot;SourceSansPro-Bold&quot;;
@@ -651,10 +709,13 @@ font-size: 12px;</string>
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>
                          </property>
+                         <property name="wordWrap">
+                          <bool>true</bool>
+                         </property>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_3">
+                        <widget class="QLabel" name="dynamic_discrete_io_label">
                          <property name="styleSheet">
                           <string notr="true">color: Black;
 font-family: &quot;SourceSansPro-Bold&quot;;
@@ -669,13 +730,16 @@ background-color: #fdfdfd;</string>
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>
                          </property>
+                         <property name="wordWrap">
+                          <bool>true</bool>
+                         </property>
                         </widget>
                        </item>
                       </layout>
                      </widget>
                     </item>
                     <item row="0" column="0">
-                     <widget class="QFrame" name="frame_4">
+                     <widget class="QFrame" name="barcode_status_frame">
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
                       </property>
@@ -704,7 +768,7 @@ background-color: #fdfdfd;</string>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label">
+                        <widget class="QLabel" name="barcode_connection_status_label">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
                            <horstretch>0</horstretch>
@@ -718,7 +782,7 @@ background-color: #fdfdfd;</string>
                           </size>
                          </property>
                          <property name="styleSheet">
-                          <string notr="true">color: Black;
+                          <string notr="true">color: White;
 font-family: &quot;SourceSansPro-Bold&quot;;
 font-weight: 600;
 background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #DBE9F3, stop: 0.1 #FF0000, stop: 0.5 #FF0000, stop: 1 #E90B0B, stop: 1 #BB0009);
@@ -730,6 +794,9 @@ font-size: 12px;</string>
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>
                          </property>
+                         <property name="wordWrap">
+                          <bool>true</bool>
+                         </property>
                         </widget>
                        </item>
                       </layout>
@@ -739,13 +806,124 @@ font-size: 12px;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QFrame" name="frame">
+                  <widget class="QFrame" name="Item_information_frame">
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
                    </property>
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_8">
+                    <property name="spacing">
+                     <number>5</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QFrame" name="item_results_frame">
+                      <property name="styleSheet">
+                       <string notr="true">border-radius: 5px;
+background-color: #fafbfc;
+</string>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_9">
+                       <item>
+                        <widget class="QLabel" name="item_result_label">
+                         <property name="styleSheet">
+                          <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 12px;</string>
+                         </property>
+                         <property name="text">
+                          <string>Item Results:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <spacer name="verticalSpacer_3">
+                         <property name="orientation">
+                          <enum>Qt::Vertical</enum>
+                         </property>
+                         <property name="sizeType">
+                          <enum>QSizePolicy::Fixed</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>20</width>
+                           <height>12</height>
+                          </size>
+                         </property>
+                        </spacer>
+                       </item>
+                       <item>
+                        <widget class="QPlainTextEdit" name="barcode_reader_results">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>337</width>
+                           <height>100</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>337</width>
+                           <height>120</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 10px;
+background-color: #fdfdfd;
+border: 2px solid black;
+border-radius: 5px;</string>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                         <property name="backgroundVisible">
+                          <bool>false</bool>
+                         </property>
+                         <property name="centerOnScroll">
+                          <bool>true</bool>
+                         </property>
+                         <property name="placeholderText">
+                          <string>Results will be displayed here...</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                 </layout>
@@ -763,6 +941,43 @@ border-radius: 5px;</string>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_5">
+                 <property name="spacing">
+                  <number>4</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QFrame" name="frame">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frame_2">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
