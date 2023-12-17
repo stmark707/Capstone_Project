@@ -313,6 +313,9 @@ QPushButton:hover:!pressed#add_item_tab_button
             <property name="styleSheet">
              <string notr="true"/>
             </property>
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
             <widget class="QWidget" name="add_item_page">
              <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,1">
               <property name="spacing">
@@ -956,7 +959,7 @@ border-radius: 5px;</string>
                  <item>
                   <widget class="QFrame" name="item_information_frame">
                    <property name="styleSheet">
-                    <string notr="true">background-color: #d6f6f7;</string>
+                    <string notr="true">background-color: #bbdfe0;</string>
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
@@ -1487,7 +1490,8 @@ border-color:black;</string>
                  <item>
                   <widget class="QFrame" name="additional_information_frame">
                    <property name="styleSheet">
-                    <string notr="true">background-color: #d6f6f7;</string>
+                    <string notr="true">/*background-color: #d6f6f7;*/
+background-color: #bbdfe0;</string>
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
@@ -1537,6 +1541,21 @@ font-size: 12px;</string>
                        <enum>QFrame::Raised</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_8">
+                       <property name="spacing">
+                        <number>4</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>4</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>4</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>4</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>4</number>
+                       </property>
                        <item>
                         <widget class="QLabel" name="database_entry_static_label">
                          <property name="styleSheet">
