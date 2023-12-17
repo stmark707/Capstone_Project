@@ -1,5 +1,5 @@
 from pycomm3 import CIPDriver, Services
-from pycomm3.cip.data_types import WORD, UINT, INT, DWORD, BYTE
+from pycomm3.cip.data_types import WORD, UINT, INT, DWORD, BYTE, LWORD
 from pycomm3.custom_types import FixedSizeString
 from pycomm3.logger import configure_default_logger as data_logger
 from datetime import datetime
@@ -54,22 +54,27 @@ sr_1000_service_dict = {
 service = Services()
 barcode_scanner = CIPDriver('192.168.1.10')
 
+read_status_attribute_id = b'\x64'
 barcode_instance_id = b'\x01'
 barcode_class_id = b'\x69'
 service_data_start = bytearray(b'\xFF\x01')
-service_data_result = bytearray(b'\xFFF\x01')
+service_data_result = bytearray(b'\xFF\x05')
 data_size = UINT
 rest_result=UINT
 read_result = WORD
+message = FixedSizeString(128, LWORD)
 
 try:
     #while True:
     with barcode_scanner:
-        data = barcode_scanner.generic_message(sr_1000_service_dict.get("start_read"), barcode_class_id, barcode_instance_id, attribute=b'', request_data=service_data_start, data_type=UINT, 
+        data = barcode_scanner.generic_message(sr_1000_service_dict.get("start_read"), barcode_class_id, barcode_instance_id, attribute=None, request_data=service_data_start, data_type=UINT, 
                                         name='Start read', connected=True, unconnected_send=False )
-        read_result = barcode_scanner.generic_message(sr_1000_service_dict.get("acquire_read"), barcode_class_id, barcode_instance_id, attribute=b'', request_data=service_data_result, data_type=UINT, 
+        read_result = barcode_scanner.generic_message(sr_1000_service_dict.get("acquire_read"), barcode_class_id, barcode_instance_id, attribute=read_status_attribute_id, data_type=message, 
                                         name='read result', connected=True, unconnected_send=False )
-        print(f'Barcode/start read {data}\n{read_result} ')
+        #data = barcode_scanner.generic_message(sr_1000_service_dict.get("get_attribute"), barcode_class_id, barcode_instance_id, attribute=read_status_attribute_id, data_type=UINT, 
+                                        #name='Read Status', connected=True, unconnected_send=False )
+        #result_array = list(data[1])
+        print(f'Barcode/start read {type(data)}\n{data}\n{read_result}')
     
 except KeyboardInterrupt:
     barcode_scanner.close()
