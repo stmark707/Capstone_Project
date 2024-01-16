@@ -1,0 +1,112 @@
+2024-01-08 13:38:24,841 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=57618897 has been registered.
+2024-01-08 13:38:24,842 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2024-01-08 13:38:24,842 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2024-01-08 13:38:24,843 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2024-01-08 13:38:24,843 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xd31o\x03'
+2024-01-08 13:38:24,849 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2024-01-08 13:38:24,870 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' completed
+2024-01-08 13:38:29,871 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2024-01-08 13:38:29,877 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2024-01-08 13:38:29,877 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2024-01-08 13:38:29,878 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2024-01-08 13:38:29,897 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=57623950 has been registered.
+2024-01-08 13:38:29,900 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2024-01-08 13:38:29,900 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2024-01-08 13:38:29,902 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2024-01-08 13:38:29,902 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\x93Eo\x03'
+2024-01-08 13:38:29,902 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Read results
+2024-01-08 13:38:29,920 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 846, in decode
+    _val = [cls.element_type.decode(stream) for _ in range(_length)]
+                                                     ^^^^^^^^^^^^^^
+TypeError: '_DataTypeMeta' object cannot be interpreted as an integer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 903, in _decode
+    values = {typ.name: typ.decode(stream) for typ in cls.members}
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 903, in <dictcomp>
+    values = {typ.name: typ.decode(stream) for typ in cls.members}
+                        ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 856, in decode
+    raise DataError(
+pycomm3.exceptions.DataError: Error unpacking into UINT[UINT] from b'\x81\x03\x01\x00\x00\x00\x00\x00'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 180, in decode
+    raise DataError(
+pycomm3.exceptions.DataError: Error unpacking b'\x81\x03\x01\x00\x00\x00\x00\x00' as Struct
+2024-01-08 13:38:29,949 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Read results' failed: Failed to parse reply - Error unpacking b'\x81\x03\x01\x00\x00\x00\x00\x00' as Struct
+2024-01-08 13:38:29,950 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Stop read
+2024-01-08 13:38:29,970 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Stop read' completed
+2024-01-08 13:38:29,970 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2024-01-08 13:38:29,972 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2024-01-08 13:38:29,972 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2024-01-08 13:38:29,973 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2024-01-08 13:38:42,100 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=57636147 has been registered.
+2024-01-08 13:38:42,101 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2024-01-08 13:38:42,101 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2024-01-08 13:38:42,103 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2024-01-08 13:38:42,103 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'5uo\x03'
+2024-01-08 13:38:42,103 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2024-01-08 13:38:42,121 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' completed
+2024-01-08 13:38:47,122 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2024-01-08 13:38:47,124 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2024-01-08 13:38:47,125 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2024-01-08 13:38:47,125 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2024-01-08 13:38:47,139 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=57641183 has been registered.
+2024-01-08 13:38:47,139 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2024-01-08 13:38:47,139 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2024-01-08 13:38:47,141 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2024-01-08 13:38:47,141 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xe1\x88o\x03'
+2024-01-08 13:38:47,141 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Read results
+2024-01-08 13:38:47,160 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 846, in decode
+    _val = [cls.element_type.decode(stream) for _ in range(_length)]
+                                                     ^^^^^^^^^^^^^^
+TypeError: '_DataTypeMeta' object cannot be interpreted as an integer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 903, in _decode
+    values = {typ.name: typ.decode(stream) for typ in cls.members}
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 903, in <dictcomp>
+    values = {typ.name: typ.decode(stream) for typ in cls.members}
+                        ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 856, in decode
+    raise DataError(
+pycomm3.exceptions.DataError: Error unpacking into UINT[UINT] from b'\x81\x03\x01\x00\x00\x00\x00\x00'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 180, in decode
+    raise DataError(
+pycomm3.exceptions.DataError: Error unpacking b'\x81\x03\x01\x00\x00\x00\x00\x00' as Struct
+2024-01-08 13:38:47,163 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Read results' failed: Failed to parse reply - Error unpacking b'\x81\x03\x01\x00\x00\x00\x00\x00' as Struct
+2024-01-08 13:38:47,163 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Stop read
+2024-01-08 13:38:47,180 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Stop read' completed
+2024-01-08 13:38:47,180 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2024-01-08 13:38:47,183 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2024-01-08 13:38:47,183 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2024-01-08 13:38:47,183 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered

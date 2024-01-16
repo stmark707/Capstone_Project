@@ -1,0 +1,1224 @@
+2023-12-18 19:36:30,999 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=179879 has been registered.
+2023-12-18 19:36:30,999 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:36:30,999 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:36:31,001 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:36:31,001 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xa9\xbe\x02\x00'
+2023-12-18 19:36:31,001 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:36:31,019 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Insufficient command data
+2023-12-18 19:36:31,019 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:36:31,039 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: Insufficient command data
+2023-12-18 19:36:31,040 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:36:31,042 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:36:31,042 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:36:31,042 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:37:00,703 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=209567 has been registered.
+2023-12-18 19:37:00,703 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:37:00,703 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:37:00,704 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:37:00,704 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xa02\x03\x00'
+2023-12-18 19:37:00,704 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:37:00,720 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:37:00,748 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:37:00,748 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:37:00,760 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: Insufficient command data
+2023-12-18 19:37:00,761 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:37:00,762 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:37:00,762 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:37:00,762 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:37:33,493 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=242340 has been registered.
+2023-12-18 19:37:33,493 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:37:33,493 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:37:33,494 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:37:33,494 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xa5\xb2\x03\x00'
+2023-12-18 19:37:33,494 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:37:33,512 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:37:33,518 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:37:33,518 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:37:33,532 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: Insufficient command data
+2023-12-18 19:37:33,533 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:37:33,535 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:37:33,535 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:37:33,535 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:38:27,870 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=296689 has been registered.
+2023-12-18 19:38:27,870 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:38:27,870 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:38:27,871 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:38:27,871 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xf2\x86\x04\x00'
+2023-12-18 19:38:27,871 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:38:27,892 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:38:27,895 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:38:27,895 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:38:27,913 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: Insufficient command data
+2023-12-18 19:38:27,914 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:38:27,915 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:38:27,915 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:38:27,915 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:38:58,343 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=327145 has been registered.
+2023-12-18 19:38:58,344 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:38:58,345 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:38:58,347 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:38:58,348 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xed\xfd\x04\x00'
+2023-12-18 19:38:58,348 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:38:58,364 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:38:58,376 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:39:00,377 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:39:00,394 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: Insufficient command data
+2023-12-18 19:39:00,396 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:39:00,399 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:39:00,400 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:39:00,400 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:39:16,589 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=345382 has been registered.
+2023-12-18 19:39:16,589 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:39:16,590 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:39:16,592 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:39:16,592 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b')E\x05\x00'
+2023-12-18 19:39:16,592 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:39:16,605 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:39:16,611 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:39:21,612 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:39:21,624 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: Insufficient command data
+2023-12-18 19:39:21,627 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:39:21,629 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:39:21,629 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:39:21,630 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:39:55,045 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=383818 has been registered.
+2023-12-18 19:39:55,046 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:39:55,046 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:39:55,048 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:39:55,048 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'M\xdb\x05\x00'
+2023-12-18 19:39:55,048 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:39:55,065 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:39:55,070 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:40:00,071 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:40:00,072 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:40:00,075 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:40:00,075 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:40:00,076 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:40:00,076 [ERROR] pycomm3.cip_driver.CIPDriver.__exit__(): Unhandled Client Error
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 933, in encode
+    return cls._encode(segment, padded)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 1080, in _encode
+    raise DataError(f"Segment value not valid for segment type")
+pycomm3.exceptions.DataError: Segment value not valid for segment type
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 623, in encode
+    path = b"".join(
+           ^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 626, in <genexpr>
+    else segment.encode(segment, padded=cls.padded)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 935, in encode
+    raise DataError(
+pycomm3.exceptions.DataError: Error packing LogicalSegment(name=None) as LogicalSegment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\OneDrive\Desktop\National University Journey(Hard Copy)\CSC480A\embedded_system_code\inventory_code\Capstone_Project\barcode_adapter_test.py", line 73, in <module>
+    read_result = barcode_scanner.generic_message(sr_1000_service_dict.get("acquire_read"), barcode_class_id, barcode_instance_id, attribute=service_data_result, data_type=message,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip_driver.py", line 553, in generic_message
+    response = self.send(request)
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip_driver.py", line 574, in send
+    self._send(request.build_request(**request_kwargs))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\ethernetip.py", line 115, in build_request
+    return super().build_request(target_cid, session_id, context, option, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\base.py", line 144, in build_request
+    msg = self.build_message()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\base.py", line 136, in build_message
+    self._setup_message()
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 87, in _setup_message
+    req_path = request_path(self.class_code, self.instance, self.attribute)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\util.py", line 90, in request_path
+    return PADDED_EPATH.encode(segments, length=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 636, in encode
+    raise DataError(
+pycomm3.exceptions.DataError: Error packing [LogicalSegment(name=None), LogicalSegment(name=None), LogicalSegment(name=None)] as PADDED_EPATH
+2023-12-18 19:41:21,957 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=470684 has been registered.
+2023-12-18 19:41:21,958 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:41:21,959 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:41:21,961 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:41:21,961 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\x9f.\x07\x00'
+2023-12-18 19:41:21,962 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:41:21,978 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:41:21,988 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:41:26,990 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:41:27,009 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: Insufficient command data
+2023-12-18 19:41:27,012 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:41:27,015 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:41:27,015 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:41:27,016 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:41:55,273 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=503981 has been registered.
+2023-12-18 19:41:55,273 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:41:55,273 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:41:55,275 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:41:55,275 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xaf\xb0\x07\x00'
+2023-12-18 19:41:55,275 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:41:55,289 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:41:55,291 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:42:00,293 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:42:00,293 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:42:00,295 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:42:00,295 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:42:00,295 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:42:00,295 [ERROR] pycomm3.cip_driver.CIPDriver.__exit__(): Unhandled Client Error
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 933, in encode
+    return cls._encode(segment, padded)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 1080, in _encode
+    raise DataError(f"Segment value not valid for segment type")
+pycomm3.exceptions.DataError: Segment value not valid for segment type
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 623, in encode
+    path = b"".join(
+           ^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 626, in <genexpr>
+    else segment.encode(segment, padded=cls.padded)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 935, in encode
+    raise DataError(
+pycomm3.exceptions.DataError: Error packing LogicalSegment(name=None) as LogicalSegment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\OneDrive\Desktop\National University Journey(Hard Copy)\CSC480A\embedded_system_code\inventory_code\Capstone_Project\barcode_adapter_test.py", line 73, in <module>
+    read_result = barcode_scanner.generic_message(sr_1000_service_dict.get("acquire_read"), barcode_class_id, barcode_instance_id, attribute=service_data_result, data_type=message,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip_driver.py", line 553, in generic_message
+    response = self.send(request)
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip_driver.py", line 574, in send
+    self._send(request.build_request(**request_kwargs))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\ethernetip.py", line 115, in build_request
+    return super().build_request(target_cid, session_id, context, option, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\base.py", line 144, in build_request
+    msg = self.build_message()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\base.py", line 136, in build_message
+    self._setup_message()
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 87, in _setup_message
+    req_path = request_path(self.class_code, self.instance, self.attribute)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\util.py", line 90, in request_path
+    return PADDED_EPATH.encode(segments, length=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 636, in encode
+    raise DataError(
+pycomm3.exceptions.DataError: Error packing [LogicalSegment(name=None), LogicalSegment(name=None), LogicalSegment(name=None)] as PADDED_EPATH
+2023-12-18 19:42:53,487 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=562165 has been registered.
+2023-12-18 19:42:53,487 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:42:53,487 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:42:53,487 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:42:53,488 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xf6\x93\x08\x00'
+2023-12-18 19:42:53,488 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:42:53,501 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:42:53,503 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:42:58,505 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:42:58,521 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: Insufficient command data
+2023-12-18 19:42:58,523 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:42:58,526 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:42:58,526 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:42:58,527 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:43:22,765 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=591428 has been registered.
+2023-12-18 19:43:22,765 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:43:22,765 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:43:22,766 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:43:22,766 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'E\x06\t\x00'
+2023-12-18 19:43:22,766 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:43:22,782 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:43:22,784 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:43:27,785 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:43:27,785 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:43:27,787 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:43:27,787 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:43:27,787 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:43:27,787 [ERROR] pycomm3.cip_driver.CIPDriver.__exit__(): Unhandled Client Error
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 933, in encode
+    return cls._encode(segment, padded)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 1080, in _encode
+    raise DataError(f"Segment value not valid for segment type")
+pycomm3.exceptions.DataError: Segment value not valid for segment type
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 623, in encode
+    path = b"".join(
+           ^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 626, in <genexpr>
+    else segment.encode(segment, padded=cls.padded)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 935, in encode
+    raise DataError(
+pycomm3.exceptions.DataError: Error packing LogicalSegment(name=None) as LogicalSegment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\OneDrive\Desktop\National University Journey(Hard Copy)\CSC480A\embedded_system_code\inventory_code\Capstone_Project\barcode_adapter_test.py", line 73, in <module>
+    read_result = barcode_scanner.generic_message(sr_1000_service_dict.get("acquire_read"), barcode_class_id, barcode_instance_id, attribute=service_data_result, data_type=message,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip_driver.py", line 553, in generic_message
+    response = self.send(request)
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip_driver.py", line 574, in send
+    self._send(request.build_request(**request_kwargs))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\ethernetip.py", line 115, in build_request
+    return super().build_request(target_cid, session_id, context, option, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\base.py", line 144, in build_request
+    msg = self.build_message()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\base.py", line 136, in build_message
+    self._setup_message()
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 87, in _setup_message
+    req_path = request_path(self.class_code, self.instance, self.attribute)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\util.py", line 90, in request_path
+    return PADDED_EPATH.encode(segments, length=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 636, in encode
+    raise DataError(
+pycomm3.exceptions.DataError: Error packing [LogicalSegment(name=None), LogicalSegment(name=None), LogicalSegment(name=None)] as PADDED_EPATH
+2023-12-18 19:43:37,519 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=606175 has been registered.
+2023-12-18 19:43:37,520 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:43:37,520 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:43:37,521 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:43:37,521 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xe0?\t\x00'
+2023-12-18 19:43:37,521 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:43:37,542 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:43:37,549 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:43:42,550 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:43:42,551 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:43:42,554 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:43:42,554 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:43:42,555 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:43:42,555 [ERROR] pycomm3.cip_driver.CIPDriver.__exit__(): Unhandled Client Error
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 933, in encode
+    return cls._encode(segment, padded)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 1080, in _encode
+    raise DataError(f"Segment value not valid for segment type")
+pycomm3.exceptions.DataError: Segment value not valid for segment type
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 623, in encode
+    path = b"".join(
+           ^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 626, in <genexpr>
+    else segment.encode(segment, padded=cls.padded)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 935, in encode
+    raise DataError(
+pycomm3.exceptions.DataError: Error packing LogicalSegment(name=None) as LogicalSegment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\OneDrive\Desktop\National University Journey(Hard Copy)\CSC480A\embedded_system_code\inventory_code\Capstone_Project\barcode_adapter_test.py", line 73, in <module>
+    read_result = barcode_scanner.generic_message(sr_1000_service_dict.get("acquire_read"), barcode_class_id, barcode_instance_id, attribute=service_data_result, data_type=message,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip_driver.py", line 553, in generic_message
+    response = self.send(request)
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip_driver.py", line 574, in send
+    self._send(request.build_request(**request_kwargs))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\ethernetip.py", line 115, in build_request
+    return super().build_request(target_cid, session_id, context, option, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\base.py", line 144, in build_request
+    msg = self.build_message()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\base.py", line 136, in build_message
+    self._setup_message()
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 87, in _setup_message
+    req_path = request_path(self.class_code, self.instance, self.attribute)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\util.py", line 90, in request_path
+    return PADDED_EPATH.encode(segments, length=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 636, in encode
+    raise DataError(
+pycomm3.exceptions.DataError: Error packing [LogicalSegment(name=None), LogicalSegment(name=None), LogicalSegment(name=None)] as PADDED_EPATH
+2023-12-18 19:43:45,632 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=614283 has been registered.
+2023-12-18 19:43:45,633 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:43:45,633 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:43:45,635 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:43:45,635 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\x8d_\t\x00'
+2023-12-18 19:43:45,635 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:43:45,652 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:43:45,655 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:43:50,656 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:43:50,657 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:43:50,659 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:43:50,659 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:43:50,660 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:43:50,660 [ERROR] pycomm3.cip_driver.CIPDriver.__exit__(): Unhandled Client Error
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 933, in encode
+    return cls._encode(segment, padded)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 1080, in _encode
+    raise DataError(f"Segment value not valid for segment type")
+pycomm3.exceptions.DataError: Segment value not valid for segment type
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 623, in encode
+    path = b"".join(
+           ^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 626, in <genexpr>
+    else segment.encode(segment, padded=cls.padded)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 935, in encode
+    raise DataError(
+pycomm3.exceptions.DataError: Error packing LogicalSegment(name=None) as LogicalSegment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\OneDrive\Desktop\National University Journey(Hard Copy)\CSC480A\embedded_system_code\inventory_code\Capstone_Project\barcode_adapter_test.py", line 73, in <module>
+    read_result = barcode_scanner.generic_message(sr_1000_service_dict.get("acquire_read"), barcode_class_id, barcode_instance_id, attribute=service_data_result, data_type=message,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip_driver.py", line 553, in generic_message
+    response = self.send(request)
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip_driver.py", line 574, in send
+    self._send(request.build_request(**request_kwargs))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\ethernetip.py", line 115, in build_request
+    return super().build_request(target_cid, session_id, context, option, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\base.py", line 144, in build_request
+    msg = self.build_message()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\base.py", line 136, in build_message
+    self._setup_message()
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 87, in _setup_message
+    req_path = request_path(self.class_code, self.instance, self.attribute)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\util.py", line 90, in request_path
+    return PADDED_EPATH.encode(segments, length=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 636, in encode
+    raise DataError(
+pycomm3.exceptions.DataError: Error packing [LogicalSegment(name=None), LogicalSegment(name=None), LogicalSegment(name=None)] as PADDED_EPATH
+2023-12-18 19:44:45,346 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=673966 has been registered.
+2023-12-18 19:44:45,347 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:44:45,347 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:44:45,349 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:44:45,350 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xb1H\n\x00'
+2023-12-18 19:44:45,350 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:44:45,365 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:44:45,374 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:44:50,376 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:44:50,394 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: Insufficient command data
+2023-12-18 19:44:50,395 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:44:50,398 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:44:50,398 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:44:50,398 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:45:07,549 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=696157 has been registered.
+2023-12-18 19:45:07,550 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:45:07,550 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:45:07,553 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:45:07,553 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'a\x9f\n\x00'
+2023-12-18 19:45:07,554 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:45:07,575 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:45:07,587 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:45:12,590 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:45:12,590 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:45:12,592 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:45:12,592 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:45:12,592 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:45:12,592 [ERROR] pycomm3.cip_driver.CIPDriver.__exit__(): Unhandled Client Error
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 933, in encode
+    return cls._encode(segment, padded)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 1080, in _encode
+    raise DataError(f"Segment value not valid for segment type")
+pycomm3.exceptions.DataError: Segment value not valid for segment type
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 623, in encode
+    path = b"".join(
+           ^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 626, in <genexpr>
+    else segment.encode(segment, padded=cls.padded)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 935, in encode
+    raise DataError(
+pycomm3.exceptions.DataError: Error packing LogicalSegment(name=None) as LogicalSegment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\OneDrive\Desktop\National University Journey(Hard Copy)\CSC480A\embedded_system_code\inventory_code\Capstone_Project\barcode_adapter_test.py", line 73, in <module>
+    read_result = barcode_scanner.generic_message(sr_1000_service_dict.get("acquire_read"), barcode_class_id, barcode_instance_id, attribute=service_data_result, data_type=message,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip_driver.py", line 553, in generic_message
+    response = self.send(request)
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip_driver.py", line 574, in send
+    self._send(request.build_request(**request_kwargs))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\ethernetip.py", line 115, in build_request
+    return super().build_request(target_cid, session_id, context, option, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\base.py", line 144, in build_request
+    msg = self.build_message()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\base.py", line 136, in build_message
+    self._setup_message()
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 87, in _setup_message
+    req_path = request_path(self.class_code, self.instance, self.attribute)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\util.py", line 90, in request_path
+    return PADDED_EPATH.encode(segments, length=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 636, in encode
+    raise DataError(
+pycomm3.exceptions.DataError: Error packing [LogicalSegment(name=None), LogicalSegment(name=None), LogicalSegment(name=None)] as PADDED_EPATH
+2023-12-18 19:45:39,056 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=727648 has been registered.
+2023-12-18 19:45:39,056 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:45:39,056 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:45:39,057 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:45:39,057 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'a\x1a\x0b\x00'
+2023-12-18 19:45:39,057 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:45:39,076 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:45:39,082 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:45:44,083 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:45:44,083 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:45:44,085 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:45:44,085 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:45:44,085 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:45:44,085 [ERROR] pycomm3.cip_driver.CIPDriver.__exit__(): Unhandled Client Error
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 933, in encode
+    return cls._encode(segment, padded)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 1077, in _encode
+    _fmt = cls.logical_format.get(len(_value))
+                                  ^^^^^^^^^^^
+TypeError: object of type '_DataTypeMeta' has no len()
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 623, in encode
+    path = b"".join(
+           ^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 626, in <genexpr>
+    else segment.encode(segment, padded=cls.padded)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 935, in encode
+    raise DataError(
+pycomm3.exceptions.DataError: Error packing LogicalSegment(name=None) as LogicalSegment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\OneDrive\Desktop\National University Journey(Hard Copy)\CSC480A\embedded_system_code\inventory_code\Capstone_Project\barcode_adapter_test.py", line 73, in <module>
+    read_result = barcode_scanner.generic_message(sr_1000_service_dict.get("acquire_read"), barcode_class_id, barcode_instance_id, attribute=service_data_result, data_type=message,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip_driver.py", line 553, in generic_message
+    response = self.send(request)
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip_driver.py", line 574, in send
+    self._send(request.build_request(**request_kwargs))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\ethernetip.py", line 115, in build_request
+    return super().build_request(target_cid, session_id, context, option, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\base.py", line 144, in build_request
+    msg = self.build_message()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\base.py", line 136, in build_message
+    self._setup_message()
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 87, in _setup_message
+    req_path = request_path(self.class_code, self.instance, self.attribute)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\util.py", line 90, in request_path
+    return PADDED_EPATH.encode(segments, length=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 636, in encode
+    raise DataError(
+pycomm3.exceptions.DataError: Error packing [LogicalSegment(name=None), LogicalSegment(name=None), LogicalSegment(name=None)] as PADDED_EPATH
+2023-12-18 19:48:44,435 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=912929 has been registered.
+2023-12-18 19:48:44,435 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:48:44,435 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:48:44,436 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:48:44,436 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'"\xee\r\x00'
+2023-12-18 19:48:44,436 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:48:44,452 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:48:44,459 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:48:49,459 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:48:49,461 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: IOI syntax error. A syntax error was detected decoding the Request Path (see extended status) - Extended status out of memory  (04, 00)
+2023-12-18 19:48:49,464 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:48:49,468 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:48:49,468 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:48:49,468 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:53:13,938 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=1182289 has been registered.
+2023-12-18 19:53:13,938 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:53:13,938 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:53:13,940 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:53:13,940 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'S\n\x12\x00'
+2023-12-18 19:53:13,940 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:53:13,960 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:53:13,973 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:53:18,974 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:53:18,990 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: Insufficient command data
+2023-12-18 19:53:18,991 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:53:18,993 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:53:18,993 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:53:18,993 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:53:51,983 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=1220316 has been registered.
+2023-12-18 19:53:51,984 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:53:51,984 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:53:51,985 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:53:51,985 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xde\x9e\x12\x00'
+2023-12-18 19:53:51,985 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:53:52,000 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:53:52,002 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:53:57,004 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:53:57,006 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: IOI syntax error. A syntax error was detected decoding the Request Path (see extended status) - Extended status out of memory  (04, 00)
+2023-12-18 19:53:57,009 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:53:57,011 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:53:57,012 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:53:57,012 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:54:20,418 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=1248736 has been registered.
+2023-12-18 19:54:20,419 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:54:20,419 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:54:20,419 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:54:20,420 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xe1\r\x13\x00'
+2023-12-18 19:54:20,420 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:54:20,431 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:54:20,434 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:54:25,435 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:54:25,451 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: Insufficient command data
+2023-12-18 19:54:25,454 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:54:25,457 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:54:25,458 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:54:25,458 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:54:44,307 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=1272612 has been registered.
+2023-12-18 19:54:44,307 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:54:44,307 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:54:44,309 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:54:44,309 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'&k\x13\x00'
+2023-12-18 19:54:44,309 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:54:44,322 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:54:44,324 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:54:49,326 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:54:49,343 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: Insufficient command data
+2023-12-18 19:54:49,344 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:54:49,346 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:54:49,346 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:54:49,346 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:57:43,214 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=1451427 has been registered.
+2023-12-18 19:57:43,214 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:57:43,214 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:57:43,217 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:57:43,217 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xa5%\x16\x00'
+2023-12-18 19:57:43,217 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:57:43,239 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:57:43,241 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:57:48,242 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:57:48,258 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: Insufficient command data
+2023-12-18 19:57:48,261 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:57:48,264 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:57:48,265 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:57:48,265 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 19:58:33,462 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=1501648 has been registered.
+2023-12-18 19:58:33,462 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 19:58:33,462 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 19:58:33,463 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 19:58:33,463 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xd1\xe9\x16\x00'
+2023-12-18 19:58:33,463 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 19:58:33,479 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 19:58:33,481 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 19:58:38,483 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 19:58:38,500 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: Insufficient command data
+2023-12-18 19:58:38,501 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 19:58:38,503 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 19:58:38,503 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 19:58:38,503 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 20:08:57,577 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=2125431 has been registered.
+2023-12-18 20:08:57,577 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 20:08:57,577 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 20:08:57,579 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 20:08:57,579 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'xn \x00'
+2023-12-18 20:08:57,579 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 20:08:57,600 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 20:08:57,602 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 20:09:02,603 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 20:09:02,604 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 20:09:02,607 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 20:09:02,608 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 20:09:02,608 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 20:09:02,608 [ERROR] pycomm3.cip_driver.CIPDriver.__exit__(): Unhandled Client Error
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 933, in encode
+    return cls._encode(segment, padded)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 1080, in _encode
+    raise DataError(f"Segment value not valid for segment type")
+pycomm3.exceptions.DataError: Segment value not valid for segment type
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 623, in encode
+    path = b"".join(
+           ^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 626, in <genexpr>
+    else segment.encode(segment, padded=cls.padded)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 935, in encode
+    raise DataError(
+pycomm3.exceptions.DataError: Error packing LogicalSegment(name=None) as LogicalSegment
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\stmar\OneDrive\Desktop\National University Journey(Hard Copy)\CSC480A\embedded_system_code\inventory_code\Capstone_Project\barcode_adapter_test.py", line 73, in <module>
+    read_result = barcode_scanner.generic_message(sr_1000_service_dict.get("acquire_read"), barcode_class_id, barcode_instance_id, attribute=service_data_result, data_type=message,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip_driver.py", line 553, in generic_message
+    response = self.send(request)
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip_driver.py", line 574, in send
+    self._send(request.build_request(**request_kwargs))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\ethernetip.py", line 115, in build_request
+    return super().build_request(target_cid, session_id, context, option, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\base.py", line 144, in build_request
+    msg = self.build_message()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\base.py", line 136, in build_message
+    self._setup_message()
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 87, in _setup_message
+    req_path = request_path(self.class_code, self.instance, self.attribute)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\util.py", line 90, in request_path
+    return PADDED_EPATH.encode(segments, length=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 636, in encode
+    raise DataError(
+pycomm3.exceptions.DataError: Error packing [LogicalSegment(name=None), LogicalSegment(name=None), LogicalSegment(name=None)] as PADDED_EPATH
+2023-12-18 20:09:15,395 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=2143240 has been registered.
+2023-12-18 20:09:15,395 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 20:09:15,395 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 20:09:15,397 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 20:09:15,397 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\n\xb4 \x00'
+2023-12-18 20:09:15,397 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 20:09:15,419 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 20:09:15,422 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 20:09:20,423 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 20:09:20,440 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: Insufficient command data
+2023-12-18 20:09:20,443 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 20:09:20,446 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 20:09:20,447 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 20:09:20,447 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 20:11:20,562 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=2268343 has been registered.
+2023-12-18 20:11:20,562 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 20:11:20,562 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 20:11:20,564 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 20:11:20,564 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xb9\x9c"\x00'
+2023-12-18 20:11:20,564 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 20:11:20,583 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 20:11:20,585 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 20:11:25,587 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 20:11:25,604 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: Insufficient command data
+2023-12-18 20:11:25,606 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 20:11:25,609 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 20:11:25,610 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 20:11:25,610 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 20:11:46,284 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=2294051 has been registered.
+2023-12-18 20:11:46,285 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 20:11:46,285 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 20:11:46,287 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 20:11:46,287 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'&\x01#\x00'
+2023-12-18 20:11:46,288 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 20:11:46,304 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 20:11:46,311 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 20:11:51,312 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 20:11:51,325 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: Insufficient command data
+2023-12-18 20:11:51,328 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 20:11:51,331 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 20:11:51,331 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 20:11:51,332 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 20:12:30,013 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=2337758 has been registered.
+2023-12-18 20:12:30,013 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 20:12:30,013 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 20:12:30,013 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 20:12:30,014 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xdf\xab#\x00'
+2023-12-18 20:12:30,014 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 20:12:30,036 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 20:12:30,038 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 20:12:35,040 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: read result
+2023-12-18 20:12:35,042 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'read result' failed: IOI syntax error. A syntax error was detected decoding the Request Path (see extended status) - Extended status out of memory  (04, 00)
+2023-12-18 20:12:35,045 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 20:12:35,048 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 20:12:35,048 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 20:12:35,049 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 20:19:26,645 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=2754178 has been registered.
+2023-12-18 20:19:26,645 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 20:19:26,645 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 20:19:26,647 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 20:19:26,647 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\x84\x06*\x00'
+2023-12-18 20:19:26,647 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 20:19:26,668 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 20:19:26,679 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 20:19:31,681 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Read Result Code
+2023-12-18 20:19:31,682 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Read Result Code' failed: IOI syntax error. A syntax error was detected decoding the Request Path (see extended status) - Extended status out of memory  (04, 00)
+2023-12-18 20:19:31,683 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 20:19:31,686 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 20:19:31,686 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 20:19:31,686 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 20:19:53,519 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=2781038 has been registered.
+2023-12-18 20:19:53,519 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 20:19:53,519 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 20:19:53,521 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 20:19:53,521 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'po*\x00'
+2023-12-18 20:19:53,521 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 20:19:53,540 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 20:19:53,543 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 20:19:58,544 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Read Result Code
+2023-12-18 20:19:58,545 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Read Result Code' failed: IOI syntax error. A syntax error was detected decoding the Request Path (see extended status) - Extended status out of memory  (04, 00)
+2023-12-18 20:19:58,546 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 20:19:58,547 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 20:19:58,548 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 20:19:58,548 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2023-12-18 20:27:28,696 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=3235974 has been registered.
+2023-12-18 20:27:28,696 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2023-12-18 20:27:28,696 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2023-12-18 20:27:28,698 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2023-12-18 20:27:28,698 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\x88`1\x00'
+2023-12-18 20:27:28,698 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2023-12-18 20:27:28,714 [ERROR] pycomm3.packets.cip.GenericConnectedResponsePacket._parse_reply(): Failed to parse reply
+Traceback (most recent call last):
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\packets\cip.py", line 56, in _parse_reply
+    self.value = self.data_type.decode(self.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 175, in decode
+    return cls._decode(stream)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 220, in _decode
+    data = cls._stream_read(stream, cls.size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\stmar\AppData\Local\Programs\Python\Python311\Lib\site-packages\pycomm3\cip\data_types.py", line 196, in _stream_read
+    raise BufferEmptyError()
+pycomm3.exceptions.BufferEmptyError
+2023-12-18 20:27:28,717 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' failed: Failed to parse reply - 
+2023-12-18 20:27:33,718 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Read Result Code
+2023-12-18 20:27:33,733 [ERROR] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Read Result Code' failed: Insufficient command data
+2023-12-18 20:27:33,734 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2023-12-18 20:27:33,736 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2023-12-18 20:27:33,736 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2023-12-18 20:27:33,736 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered

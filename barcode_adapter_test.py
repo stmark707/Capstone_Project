@@ -1,7 +1,8 @@
 from pycomm3 import CIPDriver, Services
-from pycomm3.cip.data_types import WORD, UINT, INT, DWORD, BYTE, LWORD
+from pycomm3.cip.data_types import WORD, UINT, INT, DWORD, BYTE, SINT,STRING, ULINT, Struct
 from pycomm3.custom_types import FixedSizeString
 from pycomm3.logger import configure_default_logger as data_logger
+from pycomm3.logger import LOG_VERBOSE
 from datetime import datetime
 from time import sleep
 
@@ -23,7 +24,12 @@ from time import sleep
                     - (Provided by Manufacturer: Keyence)
                 -Attribute ID - Specifies the action to be completed (Provided by Manufacturer: Keyence)
                 
-                Class ID = b'\x69' [SR AUTOID Reader Object]
+                
+                
+    This can be used to do a hard reset - [barcode_scanner.generic_message(sr_1000_service_dict.get("device_reset"), barcode_instance_id, barcode_instance_id, data_type=None, 
+                                    name='device reset', connected=True, unconnected_send=False )]
+                                    
+    TODO: Limit logger file size!!!!
 '''
 
 time_string = datetime.now()
@@ -37,18 +43,21 @@ utc_time = utc_object.time()
 title = str(the_month) + '_' + str(the_day) + '_' + str(the_year) + '_' + 'Barcode_logger'
 filepath = ('barcode_logger' + '/' + title)
 
-
 data_logger(filename=filepath)
+#data_logger(level=LOG_VERBOSE, filename=filepath)
 
 sr_1000_service_dict = {
-                            "get_attribute": b'\x0E',
+                            "get_attribute_single": b'\x0E',
+                            "get_attribute_all": b'\x01',
                             "set_attribute": b'\x10',
                             "start_read": b'\x4B',
                             "stop_read" : b'\x4C',
                             "acquire_read": b'\x55',
                             "reset_error": b'\x53',
-                            "clear_reset_and_error_bits": b'\x5A'
-    
+                            "clear_reset_and_error_bits": b'\x5A',
+                            "get_member": b'\x18',
+                            "device_reset" : b'\x05'
+                            
                         }
 
 service = Services()
@@ -56,26 +65,72 @@ barcode_scanner = CIPDriver('192.168.1.10')
 
 read_status_attribute_id = b'\x64'
 barcode_instance_id = b'\x01'
+barcode_assembly_instance_id = b'\x64'
 barcode_class_id = b'\x69'
-service_data_start = bytearray(b'\xFF\x01')
-service_data_result = bytearray(b'\xFF\x05')
+barcode_io_status_attribute = b'\x6C'
+
+barcode_bank_number = bytearray(b'\xFF')
+
+service_data_start = bytearray(b'\xFF\xFF')
+service_data_result = UINT[2].encode([101,0])
 data_size = UINT
-rest_result=UINT
-read_result = WORD
-message = FixedSizeString(128, LWORD)
+rest_result=UINT[None]
+read_result = STRING
+message = FixedSizeString(100, UINT)
+barcode_struct = Struct(UINT[None]('FirstWord'), UINT('ReadPass'), UINT('Matching'), UINT('Read_'))
+#barcode_struct = Struct(UINT('data size'), UINT('rest data'), UINT('Result Data'))
+
+
+read_input_count = b'\x74'
+result_data_ready_count = b'\x81'
+
+with barcode_scanner:
+    #stop_reading = barcode_scanner.generic_message(sr_1000_service_dict.get("stop_read"), barcode_class_id, barcode_instance_id, data_type=None, 
+                                    #name='Stop read', connected=True, unconnected_send=False )
+    #hard_reset = barcode_scanner.generic_message(sr_1000_service_dict.get("device_reset"), barcode_instance_id, barcode_instance_id, data_type=None, 
+                                    #name='device reset', connected=True, unconnected_send=False )
+    #sleep(40)
+    no_response = barcode_scanner.generic_message(sr_1000_service_dict.get("start_read"), barcode_class_id, barcode_instance_id, request_data=service_data_start, data_type=None, 
+                                    name='Start read', connected=True, unconnected_send=False )
+    sleep(5)
+    
 
 try:
     #while True:
     with barcode_scanner:
-        data = barcode_scanner.generic_message(sr_1000_service_dict.get("start_read"), barcode_class_id, barcode_instance_id, attribute=None, request_data=service_data_start, data_type=UINT, 
-                                        name='Start read', connected=True, unconnected_send=False )
-        read_result = barcode_scanner.generic_message(sr_1000_service_dict.get("acquire_read"), barcode_class_id, barcode_instance_id, attribute=read_status_attribute_id, data_type=message, 
-                                        name='read result', connected=True, unconnected_send=False )
-        #data = barcode_scanner.generic_message(sr_1000_service_dict.get("get_attribute"), barcode_class_id, barcode_instance_id, attribute=read_status_attribute_id, data_type=UINT, 
-                                        #name='Read Status', connected=True, unconnected_send=False )
+        #sleep(0)
+        #read_result = barcode_scanner.generic_message(sr_1000_service_dict.get("acquire_read"), barcode_class_id, barcode_instance_id, attribute=service_data_result, data_type=UINT, 
+                                        #name='Read Result Code', connected=True, unconnected_send=False )
+        #read_input_count_output = barcode_scanner.generic_message(sr_1000_service_dict.get("get_attribute_single"), barcode_class_id, barcode_instance_id, attribute=read_input_count, data_type=rest_result, 
+                                        #name='Read input count', connected=True, unconnected_send=False )
+        #result_data_ready_count_output = barcode_scanner.generic_message(sr_1000_service_dict.get("get_attribute_single"), barcode_class_id, barcode_instance_id, attribute=result_data_ready_count, data_type=rest_result, 
+                                        #name='Result data ready count', connected=True, unconnected_send=False )
+        print(f'Sending data request \n\n')
+        
+        data = barcode_scanner.generic_message(sr_1000_service_dict.get("get_attribute_single"), barcode_class_id, barcode_instance_id, attribute=read_status_attribute_id, data_type=rest_result, 
+                                        name='Read results', connected=True, unconnected_send=False )
+        data2 = barcode_scanner.generic_message(sr_1000_service_dict.get("get_attribute_single"), barcode_class_id, barcode_instance_id, attribute=read_status_attribute_id, data_type=rest_result, 
+                                        name='Read results', connected=True, unconnected_send=False )
+        
+        get_data = barcode_scanner.generic_message(sr_1000_service_dict.get("acquire_read"), barcode_class_id, barcode_instance_id, request_data=service_data_result, data_type=STRING, 
+                                                   name='Result data', connected=True, unconnected_send=False)
+        
+        #data_two = barcode_scanner.generic_message(sr_1000_service_dict.get("get_attribute_single"), barcode_class_id, barcode_instance_id, attribute=read_status_attribute_id, data_type=UINT, 
+                                        #name='Read results', connected=True, unconnected_send=False )
         #result_array = list(data[1])
-        print(f'Barcode/start read {type(data)}\n{data}\n{read_result}')
-    
+        #print(f'Barcode Trigger {type(no_response)}\n{no_response}\n')
+        
+        #print(f'Barcode/start read {type(data)}\n{data}DATA Too {data_two}\nRead input count, counting how many it actually read = {read_input_count_output}\nResult data ready count = {result_data_ready_count_output}')
+        
+        get_data = list(get_data)
+        barcode = get_data[1]
+        print(f'Barcode/start read {type(data)}\n{data} {data2}\n')
+        print(f'Service code result attempt = {get_data}\n barcode = {barcode}')
+        stop_reading = barcode_scanner.generic_message(sr_1000_service_dict.get("stop_read"), barcode_class_id, barcode_instance_id, data_type=None, 
+                                name='Stop read', connected=True, unconnected_send=False )
+
 except KeyboardInterrupt:
+    
+    
     barcode_scanner.close()
     print('Closing communication with SR-1000')
