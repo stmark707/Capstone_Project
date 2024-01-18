@@ -72,7 +72,7 @@ barcode_io_status_attribute = b'\x6C'
 barcode_bank_number = bytearray(b'\xFF')
 
 service_data_start = bytearray(b'\xFF\xFF')
-service_data_result = UINT[2].encode([101,0])
+service_data_result = UINT[2].encode([200,0])
 data_size = UINT
 rest_result=UINT[None]
 read_result = STRING
