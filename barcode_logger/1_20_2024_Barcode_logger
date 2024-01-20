@@ -1,0 +1,28 @@
+2024-01-20 08:43:54,473 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=1076230639 has been registered.
+2024-01-20 08:43:54,474 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2024-01-20 08:43:54,474 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2024-01-20 08:43:54,476 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2024-01-20 08:43:54,477 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xf3\xf9%@'
+2024-01-20 08:43:54,478 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Start read
+2024-01-20 08:43:54,498 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Start read' completed
+2024-01-20 08:43:59,499 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2024-01-20 08:43:59,502 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2024-01-20 08:43:59,502 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2024-01-20 08:43:59,502 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
+2024-01-20 08:43:59,526 [INFO] pycomm3.cip_driver.CIPDriver._register_session(): Session=1076235690 has been registered.
+2024-01-20 08:43:59,527 [INFO] pycomm3.cip_driver.wrapped(): Attempting an Extended Forward Open...
+2024-01-20 08:43:59,527 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_open
+2024-01-20 08:43:59,528 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_open' completed
+2024-01-20 08:43:59,528 [INFO] pycomm3.cip_driver.CIPDriver._forward_open(): Extended Forward Open succeeded. Target CID=b'\xac\r&@'
+2024-01-20 08:43:59,529 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Read results
+2024-01-20 08:43:59,550 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Read results' completed
+2024-01-20 08:43:59,550 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Read results
+2024-01-20 08:43:59,568 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Read results' completed
+2024-01-20 08:43:59,568 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Result data
+2024-01-20 08:43:59,588 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Result data' completed
+2024-01-20 08:43:59,590 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: Stop read
+2024-01-20 08:43:59,608 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'Stop read' completed
+2024-01-20 08:43:59,608 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Sending generic message: forward_close
+2024-01-20 08:43:59,610 [INFO] pycomm3.cip_driver.CIPDriver.generic_message(): Generic message 'forward_close' completed
+2024-01-20 08:43:59,610 [INFO] pycomm3.cip_driver.CIPDriver._forward_close(): Forward Close succeeded.
+2024-01-20 08:43:59,610 [INFO] pycomm3.cip_driver.CIPDriver._un_register_session(): Session Unregistered
