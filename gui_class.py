@@ -22,6 +22,8 @@ class ControlGui(QtWidgets.QMainWindow):
         self.add_items_button.clicked.connect(lambda: self.database_actions_stacked_widget.setCurrentIndex(0))
         self.remove_item_button.clicked.connect(lambda: self.database_actions_stacked_widget.setCurrentIndex(1))
         
+        
+        
         self.color_dict = {
                             'teal_blue': '#09486d',
                             'dark_blue': '#52A40',
