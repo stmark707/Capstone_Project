@@ -1,4 +1,4 @@
-from PyQt6.QtCore import QObject, pyqtSignal, pyqtSlot, QThread
+from PyQt6.QtCore import QObject, pyqtSignal, pyqtSlot
 from gui_class import ControlGui
 from datetime import datetime
 from pycomm3 import CIPDriver
@@ -30,8 +30,6 @@ class SR_1000(QObject):
         self.gui = gui_window
         self.barcode_scanner = CIPDriver(self.ip_addr)
         
-        self.barcode_thread = QThread()
-        
         
         self.barcode_class_id = b'\x69'
         self.barcode_instance_id = b'\x01'
@@ -44,13 +42,10 @@ class SR_1000(QObject):
         
         self.sr_1000_service_dict = {
                                         "get_attribute_single": b'\x0E',
-                                        "get_attribute_all": b'\x01',
-                                        "set_attribute": b'\x10',
                                         "start_read": b'\x4B',
                                         "stop_read" : b'\x4C',
                                         "acquire_read": b'\x55',
                                         "reset_error": b'\x53',
-                                        "clear_reset_and_error_bits": b'\x5A',
                                         "get_member": b'\x18',
                                         "device_reset" : b'\x05',
                                         "read_complete_clear": b'\x5A'
