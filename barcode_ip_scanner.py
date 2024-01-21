@@ -4,6 +4,7 @@ from datetime import datetime
 from pycomm3 import CIPDriver
 from pycomm3.cip.data_types import UINT, STRING
 from pycomm3.logger import configure_default_logger as data_logger
+from time import sleep
 
 time_string = datetime.now()
 the_month = time_string.month
@@ -90,8 +91,6 @@ class SR_1000(QObject):
     def read_status(self):
         try:
             with self.barcode_scanner:
-                reset_read = self.barcode_scanner.generic_message(self.sr_1000_service_dict.get("read_complete_clear"), self.barcode_class_id, self.barcode_instance_id, data_type=None, 
-                                                            name= self.reset_read_complete, connected=True, unconnected_send=False)
                 read_status_ = self.barcode_scanner.generic_message(self.sr_1000_service_dict.get("get_attribute_single"), self.barcode_class_id, self.barcode_instance_id, attribute=self.read_status_attribute_id, data_type=self.check_read_status, 
                                             name= self.read_success, connected=True, unconnected_send=False )
                 
@@ -111,6 +110,7 @@ class SR_1000(QObject):
                     self.grab_barcode()
                 else: 
                     continue
+                sleep(2)
             except Exception as message:
                 print(message)
                 return
@@ -138,9 +138,14 @@ class SR_1000(QObject):
             self.barcode_connect.emit(self.currently_scanning)
             self.finished_method.emit()
         
-            with self.barcode_scanner:
-                stop_reading = self.barcode_scanner.generic_message(self.sr_1000_service_dict.get("stop_read"), self.barcode_class_id, self.barcode_instance_id, data_type=None, 
-                                name= self.stop_scan, connected=True, unconnected_send=False )
+            try:
+                with self.barcode_scanner:
+                    reset_read = self.barcode_scanner.generic_message(self.sr_1000_service_dict.get("read_complete_clear"), self.barcode_class_id, self.barcode_instance_id, data_type=None, 
+                                                        name= self.reset_read_complete, connected=True, unconnected_send=False)
+                    stop_reading = self.barcode_scanner.generic_message(self.sr_1000_service_dict.get("stop_read"), self.barcode_class_id, self.barcode_instance_id, data_type=None, 
+                                    name= self.stop_scan, connected=True, unconnected_send=False )
+            except Exception:
+                self.stop_scanning()
             
             
             
