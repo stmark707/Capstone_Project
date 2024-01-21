@@ -1,5 +1,6 @@
 from pycomm3 import CIPDriver, Services
 from pycomm3.cip.data_types import UINT, STRING, Struct
+from pycomm3.exceptions import CommError
 from pycomm3.custom_types import FixedSizeString
 from pycomm3.logger import configure_default_logger as data_logger
 from pycomm3.logger import LOG_VERBOSE
