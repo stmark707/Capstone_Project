@@ -1,7 +1,7 @@
-from PyQt6 import uic, QtWidgets, QtCore
-from PyQt6.QtWidgets import QHeaderView, QTableWidgetItem, QApplication
-from PyQt6.QtCore import Qt, pyqtSlot
-from PyQt6.QtGui import QColor, QBrush, QDoubleValidator
+from PyQt5 import uic, QtWidgets, QtCore
+from PyQt5.QtWidgets import QHeaderView, QTableWidgetItem, QApplication
+from PyQt5.QtCore import Qt, pyqtSlot
+from PyQt5.QtGui import QColor, QBrush, QDoubleValidator
 import sys
 
 class ControlGui(QtWidgets.QMainWindow):
@@ -10,14 +10,14 @@ class ControlGui(QtWidgets.QMainWindow):
         super(ControlGui, self).__init__()
         uic.loadUi('design_files/simplified_inventory_interface.ui', self)
         
-        self.barcode_result_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode(2))
-        self.barcode_result_table.verticalHeader().setSectionResizeMode(QHeaderView.ResizeMode(2))
+        self.barcode_result_table.horizontalHeader().setSectionResizeMode(QHeaderView.Fixed)
+        self.barcode_result_table.verticalHeader().setSectionResizeMode(QHeaderView.Fixed)
         
-        self.database_entry_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode(2))
-        self.database_entry_table.verticalHeader().setSectionResizeMode(QHeaderView.ResizeMode(2))
+        self.database_entry_table.horizontalHeader().setSectionResizeMode(QHeaderView.Fixed)
+        self.database_entry_table.verticalHeader().setSectionResizeMode(QHeaderView.Fixed)
         
-        self.remove_item_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode(2))
-        self.remove_item_table.verticalHeader().setSectionResizeMode(QHeaderView.ResizeMode(2))
+        self.remove_item_table.horizontalHeader().setSectionResizeMode(QHeaderView.Fixed)
+        self.remove_item_table.verticalHeader().setSectionResizeMode(QHeaderView.Fixed)
         
         self.add_items_button.clicked.connect(lambda: self.database_actions_stacked_widget.setCurrentIndex(0))
         self.remove_item_button.clicked.connect(lambda: self.database_actions_stacked_widget.setCurrentIndex(1))
@@ -94,4 +94,4 @@ if __name__ == '__main__':
     app = QApplication([])
     win = ControlGui()
     
-    app.exec()
+    app.exec_()

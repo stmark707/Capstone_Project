@@ -1,6 +1,6 @@
-from PyQt6.QtWidgets import QApplication
-from PyQt6.QtCore import QObject, QThread, pyqtSignal, QUrl
-from PyQt6.QtGui import QDesktopServices
+from PyQt5.QtWidgets import QApplication
+from PyQt5.QtCore import QObject, QThread, pyqtSignal, QUrl
+from PyQt5.QtGui import QDesktopServices
 from gui_class import ControlGui
 from barcode_ip_scanner import SR_1000
 
@@ -59,5 +59,5 @@ if __name__ == '__main__':
     app = QApplication([])
     win = Main()
     
-    app.exec()
+    app.exec_()
         

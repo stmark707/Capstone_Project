@@ -1,4 +1,4 @@
-from PyQt6.QtCore import QObject, pyqtSignal, pyqtSlot
+from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
 from gui_class import ControlGui
 from datetime import datetime
 from pycomm3 import CIPDriver
