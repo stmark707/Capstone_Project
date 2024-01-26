@@ -5,7 +5,8 @@ import time
 from bs4 import BeautifulSoup 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-import chromedriver_binary
+from selenium.webdriver.common.by import By
+#import chromedriver_binary
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
 from database_handler import DataHandler
 from gui_class import ControlGui
@@ -56,18 +57,18 @@ class BarcodeIntake(QObject):
         resp = requests.get(lookupkey, self.headers)
         data = json.loads(resp.text)
         
-        
-        self._getAuthor()
-        
-        
+       
         for offer in data['items'][0]['offers']: # I want to get 5 different titles from the offer section
             if (len(self.titleEntry) < 5) & (offer["title"].title() not in self.titleEntry):
                 self.titleEntry.append(offer["title"].title())
-                self.book_info['Title'] = data['items'][0]['title']
-                self.book_info['Genre']= data['items'][0]['category']
-                self.book_info['ISBN'] = data['items'][0]['isbn']
-                self.book_info['Publisher'] = data['items'][0]['publisher']
-                self._barcode_display_list()
+                
+        self._getAuthor()
+        
+        self.book_info['Title'] = data['items'][0]['title']
+        self.book_info['Genre']= data['items'][0]['category']
+        self.book_info['ISBN'] = data['items'][0]['isbn']
+        self.book_info['Publisher'] = data['items'][0]['publisher']
+        self._barcode_display_list()
         
                 
     pyqtSlot(list, name="barcode results list")           
@@ -119,16 +120,19 @@ class BarcodeIntake(QObject):
         author = f"{authorFirst} {authorLast}"
         
         self.book_info['Author'] = author
+        print(f'Value of author inside getAuthor {author}')
         driver.close()   
     
         
     @pyqtSlot(str, name="Scanned barcode")
     def check_barcode(self, barcode):
         print(f'inside barcode api, passed string {barcode}')
-        if barcode:
+        if self.barcode_string == barcode:
+            return
+        elif barcode:
             self.barcode_string = barcode
             self.barcode_lookup()
-            
+        
         else:
             return
     
