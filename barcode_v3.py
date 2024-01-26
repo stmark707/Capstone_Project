@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By 
 from selenium.webdriver.common.keys import Keys 
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.chrome.service import Service
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
 from database_handler import DataHandler
 from gui_class import ControlGui
@@ -43,9 +43,7 @@ class BarcodeIntake(QObject):
         
         self.apiKey = 'https://api.upcitemdb.com/prod/trial/lookup?upc='
         
-        
-    
-    pyqtSlot(object, name="Full book info")            
+                   
     def barcode_lookup(self):
         '''
             TODO: Get publisher or publishing date
@@ -68,6 +66,8 @@ class BarcodeIntake(QObject):
                 self.book_info['Genre']= data['items'][0]['category']
                 self.book_info['ISBN'] = data['items'][0]['isbn']
                 self.book_info['Publisher'] = data['items'][0]['publisher']
+                self._barcode_display_list()
+        
                 
     pyqtSlot(list, name="barcode results list")           
     def _barcode_display_list(self):
@@ -88,9 +88,10 @@ class BarcodeIntake(QObject):
         
         url = "https://ocls.info/books-movies-more/books-magazines/"
         #f_options is firefox options for the driver
-        f_options = Options()
+        f_options = Service()
         f_options.add_argument("--headless")
-        driver = webdriver.Firefox(options=f_options)
+        #driver = Service('usr/lib/chromium-browser/chromedriver') Raspberry pi
+        
         driver.get(url)
         print ("Headless Firefox Initialized")
 

@@ -4,6 +4,10 @@ from PyQt5.QtCore import Qt, pyqtSlot
 from PyQt5.QtGui import QColor, QBrush, QDoubleValidator
 import sys
 
+'''
+    TODO: write function to grab selected item from table, pass it to items for database
+'''
+
 class ControlGui(QtWidgets.QMainWindow):
     
     def __init__(self):
@@ -23,7 +27,6 @@ class ControlGui(QtWidgets.QMainWindow):
         self.remove_item_button.clicked.connect(lambda: self.database_actions_stacked_widget.setCurrentIndex(1))
         
         
-        
         self.color_dict = {
                             'teal_blue': '#09486d',
                             'dark_blue': '#52A40',
@@ -36,6 +39,8 @@ class ControlGui(QtWidgets.QMainWindow):
                             'azure_blue': '#3465a4',
                             'red' : '#E90B0B'
                         }
+        
+        self.color_list = ['#52A40','#F57900', '#204A87', '#080808']
         
         self.barcode_default_comm_stylesheet = '''
                                                     color: White;
@@ -68,6 +73,21 @@ class ControlGui(QtWidgets.QMainWindow):
         self.add_item_list = [self.book_title_input_box, self.author_input_box, self.genre_input_box, self.publisher_date_input_box, 
                               self.edition_input_box, self.isbn_input_box, self.publisher_input_box]
         
+        '''
+            TODO: Get publisher or publishing date
+            TODO: Get book edition
+        '''
+        
+        self.items_for_database = {
+                                    'book_title': '',
+                                    'author': '',
+                                    'genre' : '',
+                                    'publisher_date': '',
+                                    'edition' : '',
+                                    'isbn' : '',
+                                    'publisher': ''
+                                }
+        
         self.show()        
         
     @pyqtSlot(bool, name='Barcode data Available')
@@ -92,17 +112,34 @@ class ControlGui(QtWidgets.QMainWindow):
         else:
             self.item_barcode_dynamic_label.setText('{NULL}')
             self.isbn_search_dynamic_label.setText('{NULL}')
+    
+    @pyqtSlot(object, name="Full book info")        
+    def book_information_transfer(self, book_info):
+        self.items_for_database = book_info.copy()
             
     def write_to_database_entry_table(self, recent_entry):
         # will take in a list, passed from barcode api
         pass
     
+    @pyqtSlot(list, name="barcode result list")
     def write_to_barcode_search_table(self, barcode_search_results):
-        # pass in a list of posted results, passed from barcode api
-        pass
+        row_count = self.barcode_result_table.rowCount()
+        self.barcode_result_table.insertRow(row_count)
+        
+        for item in range(4):
+            temp = QTableWidgetItem(barcode_search_results[item])
+            temp.setTextAlignment(Qt.AlignCenter)
+            temp.setForeground(QBrush(QColor(self.color_list[item])))
+            self.barcode_result_table.setItem(row_count, item, temp)
+            self.barcode_result_table.resizeRowToContents(row_count)
+            self.barcode_result_table.scrollToBottom()
     
     def write_selected_item_to_add_entry_fields(self, items_to_write):
         #write items selected in barcode search table to their fields, 
+        pass
+    
+    @pyqtSlot(list, name="Database search results")
+    def write_to_database_remove_item_table(self, items_to_display):
         pass
     
     def clear_all_add_item_fields(self):
