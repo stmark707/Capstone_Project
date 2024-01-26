@@ -32,6 +32,7 @@ class Main(QObject):
         self.gui_window.launch_website_button.clicked.connect(lambda: launch_agile_stock(self.agile_stock_website))
         self.gui_window.start_scanning_button.clicked.connect(trigger_scanner)
         self.gui_window.stop_scanning_button.clicked.connect(stop_scanner)
+        self.gui_window.clear_results_button.clicked.connect(self.gui_window.clear_all_add_item_fields)
  
 def launch_agile_stock(url_addr):
     QDesktopServices.openUrl(url_addr)

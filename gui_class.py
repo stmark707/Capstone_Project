@@ -64,6 +64,9 @@ class ControlGui(QtWidgets.QMainWindow):
 	                                                outline-offset: 4px;
 	                                                border-radius: 4px;
                                         '''
+                                        
+        self.add_item_list = [self.book_title_input_box, self.author_input_box, self.genre_input_box, self.publisher_date_input_box, 
+                              self.edition_input_box, self.isbn_input_box, self.publisher_input_box]
         
         self.show()        
         
@@ -89,6 +92,24 @@ class ControlGui(QtWidgets.QMainWindow):
         else:
             self.item_barcode_dynamic_label.setText('{NULL}')
             self.isbn_search_dynamic_label.setText('{NULL}')
+            
+    def write_to_database_entry_table(self, recent_entry):
+        # will take in a list, passed from barcode api
+        pass
+    
+    def write_to_barcode_search_table(self, barcode_search_results):
+        # pass in a list of posted results, passed from barcode api
+        pass
+    
+    def write_selected_item_to_add_entry_fields(self, items_to_write):
+        #write items selected in barcode search table to their fields, 
+        pass
+    
+    def clear_all_add_item_fields(self):
+        
+        for items in range(len(self.add_item_list)):
+            self.add_item_list[items].clear()
+    
         
 if __name__ == '__main__':
     app = QApplication([])

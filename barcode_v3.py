@@ -7,78 +7,85 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By 
 from selenium.webdriver.common.keys import Keys 
 from selenium.webdriver.firefox.options import Options
+from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
+from database_handler import DataHandler
+from gui_class import ControlGui
+from time import sleep
 
 #This is the class that will be used to create the object
 # TO DO - change the title, auth, genre, etc to something more generic, so as to be able to be a BOOK or ITEM  
 
-class barcode_intake:
-    def __init__(self):
+class BarcodeIntake(QObject):
+    
+    search_results = pyqtSignal(list, name="barcode results list")
+    book_stats = pyqtSignal(object, name="Full book info")
+    finished_method = pyqtSignal()
+    
+    def __init__(self, gui_window:ControlGui, data_handler:DataHandler):
         self.barcode_string = ""
+        
+        self.book_info = {
+                            "Title": '',
+                            'Author': '',
+                            'Genre' : '',
+                            'ISBN' : '',
+                            'Publisher': ''
+                        }
         self.titleEntry = []
-        self.firstEntry = ""        #title+/item name+        
-        self.secondEntry = ""       #author+/manufacturer+
-        self.thirdEntry = ""        #genre-/category+
-        self.fourthEntry = ""       #isbn+/upc+
-        self.fifthEntry = ""        #publisher+/domain
-
-    def __str__(self): #looks weird becuase of the indentation, but it works
-        return f"""Barcode: {self.barcode_string}
-Title: {self.firstEntry}
-Author: {self.secondEntry}
-Genre: {self.thirdEntry}
-ISBN: {self.fourthEntry}
-Publisher: {self.fifthEntry}"""
-
-        code = code.replace("-", "")  # Remove dashes if present
-
-        if len(code) == 12 and code.isdigit():
-            return "UPC Code"
-        elif (len(code) == 10 or len(code) == 13) and (code.isdigit() or (code[:-1].isdigit() and code[-1] == 'X')):
-            return "ISBN Code"
-        else:
-            return "Unknown Code"
-                
+        self.headers = {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json',
+                            'Accept-Encoding': 'gzip,deflate'
+                        }
+        
+        self.search_results.connect(self.gui.write_to_barcode_search_table)
+        self.book_stats.connect(self.gui.book_information_transfer)
+        
+        self.apiKey = 'https://api.upcitemdb.com/prod/trial/lookup?upc='
+        
+        
+    
+    pyqtSlot(object, name="Full book info")            
     def barcode_lookup(self):
-        headers = {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            'Accept-Encoding': 'gzip,deflate'
-        }
+        '''
+            TODO: Get publisher or publishing date
+            TODO: Get book edition
+        '''
         
-        apiKey = 'https://api.upcitemdb.com/prod/trial/lookup?upc='
-        UpcItem = self.barcode_string
-        lookupkey = apiKey + UpcItem
+        lookupkey = self.apiKey + self.barcode_string
         
-        resp = requests.get(lookupkey, headers=headers)
+        resp = requests.get(lookupkey, self.headers)
         data = json.loads(resp.text)
         
-        self.firstEntry = data['items'][0]['title']
-        #self.secondEntry = data['items'][0]['author']
-        self.thirdEntry = data['items'][0]['category']
-        self.fourthEntry = data['items'][0]['isbn']
-        self.fifthEntry = data['items'][0]['publisher']
+        
+        self._getAuthor()
+        
         
         for offer in data['items'][0]['offers']: # I want to get 5 different titles from the offer section
             if (len(self.titleEntry) < 5) & (offer["title"].title() not in self.titleEntry):
                 self.titleEntry.append(offer["title"].title())
-
-        #next I want to get the missing info, like author from the a public library using the titles I got from the offers section
-        #okay then maybe I can let the user choose which title they want to use,
-        #and while they're choosing, I can get the other info from the web scraping
-        #then I can use the user selection to be the title.
+                self.book_info['Title'] = data['items'][0]['title']
+                self.book_info['Genre']= data['items'][0]['category']
+                self.book_info['ISBN'] = data['items'][0]['isbn']
+                self.book_info['Publisher'] = data['items'][0]['publisher']
+                
+    pyqtSlot(list, name="barcode results list")           
+    def _barcode_display_list(self):
+        #TODO: update when publisheer and edition is ready
+        display_list = []
+        place_holder = 'NULL'
+        display_list.append(self.book_info['Title'])
+        display_list.append(self.book_info['Author'])
+        display_list.append(place_holder)
+        display_list.append(place_holder)
+        
+        self.search_results.emit(display_list)
+        self.finished_method.emit()
             
-        thislist = [self.firstEntry, 
-                    self.secondEntry, 
-                    self.thirdEntry, 
-                    self.fourthEntry, 
-                    self.fifthEntry]
-        
-        print("Title Suggestions:" + self.titleEntry.__str__())
-        
-        # return thislist
     
-    def getAuthor(self):
+    def _getAuthor(self):
 
+        
         url = "https://ocls.info/books-movies-more/books-magazines/"
         #f_options is firefox options for the driver
         f_options = Options()
@@ -99,45 +106,32 @@ Publisher: {self.fifthEntry}"""
 
         # Now, we could simply apply bs4 to html tag
         soup = BeautifulSoup(html, "html.parser") 
-        
+
         #use the autho info text to get the first and last name using a comma as a delimiter
         authorInfo = soup.find('div', {'class' : 'briefcitAuthor'}).text.strip()
         authorLast = authorInfo[ : authorInfo.find(',')]
         authorFirst = authorInfo[authorInfo.find(',')+2 : authorInfo.find(',', authorInfo.find(',')+1)].strip()        
         author = f"{authorFirst} {authorLast}"
         
-        driver.close()
-        self.secondEntry = author    
+        self.book_info['Author'] = author
+        driver.close()   
     
-    def printInfo(barcode_intake):
-    
-        print(barcode_intake)
         
-    #clear data from object and set barcode to argument
-    def setBarcode(self, barcodeString):
-        self.barcode_string = barcodeString
-        #check if the barcode is valid is in the data base
+    @pyqtSlot(str, name="Scanned barcode")
+    def check_barcode(self, barcode):
+        if barcode:
+            self.barcode_string = barcode
+        else:
+            return
     
-    #temporary function to get the barcode from the user(while get barcode from other source)
-def read_barcode():
-    barcode = ""
-    print("Scan a barcode (terminate with Enter key):")
-
-    while True:
-        try:
-            char = sys.stdin.read(1)
-            if char == '\n':
-                break
-            barcode += char
-        except KeyboardInterrupt:
-            break
-
-    return barcode
-
-scan = barcode_intake()
-
-scan.setBarcode(read_barcode())
-
-scan.barcode_lookup()
-scan.getAuthor()
-scan.printInfo()
+    def main_function(self):
+        
+        while True:
+            if self.barcode_string:
+                self.barcode_lookup()
+            
+            sleep(1)
+            
+        
+    
+    

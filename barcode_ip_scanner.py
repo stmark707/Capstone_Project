@@ -1,5 +1,6 @@
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
 from gui_class import ControlGui
+from barcode_v3 import BarcodeIntake
 from datetime import datetime
 from pycomm3 import CIPDriver
 from pycomm3.cip.data_types import UINT, STRING
@@ -20,7 +21,7 @@ class SR_1000(QObject):
     barcode_connect = pyqtSignal(bool, name='Scanning Status')
     finished_method = pyqtSignal()
     
-    def __init__(self, barcode_ip, gui_window: ControlGui):
+    def __init__(self, barcode_ip, gui_window: ControlGui, barcode_api: BarcodeIntake):
         super().__init__()
         self.ip_addr = barcode_ip
         self.title = str(the_month) + '_' + str(the_day) + '_' + str(the_year) + '_' + 'Barcode_logger'
@@ -28,6 +29,7 @@ class SR_1000(QObject):
         data_logger(filename=self.filepath)
         
         self.gui = gui_window
+        self.barcode_api = barcode_api
         self.barcode_scanner = CIPDriver(self.ip_addr)
         
         
@@ -66,6 +68,7 @@ class SR_1000(QObject):
         
         self.successful_read.connect(self.gui.change_barcode_status_message)
         self.barcode_string.connect(self.gui.barcode_string)
+        self.barcode_string.connect(self.barcode_api.check_barcode)
         self.barcode_connect.connect(self.gui.barcode_comm_status)
     
     @pyqtSlot(bool, name='Scanning Status')
