@@ -4,9 +4,8 @@ import json
 import time 
 from bs4 import BeautifulSoup 
 from selenium import webdriver
-from selenium.webdriver.common.by import By 
-from selenium.webdriver.common.keys import Keys 
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+import chromedriver_binary
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
 from database_handler import DataHandler
 from gui_class import ControlGui
@@ -22,6 +21,8 @@ class BarcodeIntake(QObject):
     finished_method = pyqtSignal()
     
     def __init__(self, gui_window:ControlGui, data_handler:DataHandler):
+        super().__init__()
+        self.gui = gui_window
         self.barcode_string = ""
         
         self.book_info = {
@@ -49,7 +50,7 @@ class BarcodeIntake(QObject):
             TODO: Get publisher or publishing date
             TODO: Get book edition
         '''
-        
+        print(f'Inside barcode lookup')
         lookupkey = self.apiKey + self.barcode_string
         
         resp = requests.get(lookupkey, self.headers)
@@ -79,6 +80,8 @@ class BarcodeIntake(QObject):
         display_list.append(place_holder)
         display_list.append(place_holder)
         
+        print(f'inside barcode display list {display_list}')
+        
         self.search_results.emit(display_list)
         self.finished_method.emit()
             
@@ -88,10 +91,11 @@ class BarcodeIntake(QObject):
         
         url = "https://ocls.info/books-movies-more/books-magazines/"
         #f_options is firefox options for the driver
-        f_options = Service()
-        f_options.add_argument("--headless")
-        #driver = Service('usr/lib/chromium-browser/chromedriver') Raspberry pi
         
+        #driver = Service('usr/lib/chromium-browser/chromedriver') Raspberry pi
+        chrome_options = Options()
+        chrome_options.add_argument("--headless=new")
+        driver = webdriver.Chrome(options=chrome_options)
         driver.get(url)
         print ("Headless Firefox Initialized")
 
@@ -120,19 +124,19 @@ class BarcodeIntake(QObject):
         
     @pyqtSlot(str, name="Scanned barcode")
     def check_barcode(self, barcode):
+        print(f'inside barcode api, passed string {barcode}')
         if barcode:
             self.barcode_string = barcode
+            self.barcode_lookup()
+            
         else:
             return
     
     def main_function(self):
         
-        while True:
-            if self.barcode_string:
-                self.barcode_lookup()
-            
-            sleep(1)
-            
+        return
+        
+     
         
     
     

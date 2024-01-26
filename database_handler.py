@@ -1,5 +1,5 @@
 from gui_class import ControlGui
-import json.dumps
+import json
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot, QThread
 
 
@@ -12,7 +12,7 @@ class DataHandler(QObject):
     finished_method = pyqtSignal()
     
     def __init__(self, gui_window: ControlGui):
-        
+        super().__init__()
         self.gui = gui_window
         self.query = QThread()
         self.database_search_results.connect(self.gui.write_to_database_remove_item_table)
@@ -31,6 +31,6 @@ class DataHandler(QObject):
         pass
     
     
-    @pySlot(list, name='Database Search Results')
+    @pyqtSlot(list, name='Database Search Results')
     def _post_retrieval_results(self):
         pass

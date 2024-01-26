@@ -22,9 +22,9 @@ class Main(QObject):
         super().__init__()
         
         self.gui_window = ControlGui()
-        self.data_handler = DataHandler()
+        self.data_handler = DataHandler(self.gui_window)
         
-        self.barcode_api = BarcodeIntake()
+        self.barcode_api = BarcodeIntake(self.gui_window, self.data_handler)
         self.barcode_scanner = SR_1000(barcode_scanner_ip, self.gui_window, self.barcode_api)
         self.barcode_thread = QThread()
         
@@ -35,13 +35,15 @@ class Main(QObject):
         
         self.barcode_scanner.moveToThread(self.barcode_thread)
         
-        self.barcode_api.moveToThread(self.barcode_api)
+        self.barcode_api.moveToThread(self.barcode_api_thread)
         
                 
         self.barcode_thread.started.connect(self.barcode_scanner.main_function)
+        self.barcode_api_thread.started.connect(self.barcode_api.main_function)
         
         device_list.append(self.barcode_scanner) #try different approach later
         thread_list.append(self.barcode_thread)
+        thread_list.append(self.barcode_api_thread)
         
         self.gui_window.launch_website_button.clicked.connect(lambda: launch_agile_stock(self.agile_stock_website))
         self.gui_window.start_scanning_button.clicked.connect(trigger_scanner)
