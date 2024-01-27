@@ -57,17 +57,15 @@ class BarcodeIntake(QObject):
         resp = requests.get(lookupkey, self.headers)
         data = json.loads(resp.text)
         
-       
-        for offer in data['items'][0]['offers']: # I want to get 5 different titles from the offer section
-            if (len(self.titleEntry) < 5) & (offer["title"].title() not in self.titleEntry):
-                self.titleEntry.append(offer["title"].title())
-                
+                 
         self._getAuthor()
         
-        self.book_info['Title'] = data['items'][0]['title']
-        self.book_info['Genre']= data['items'][0]['category']
+        for offer in data['items'][0]['offers']: # I want to get 5 different titles from the offer section And does not contain the word By or by 
+            if (len(self.titleEntry) < 5) & (offer["title"].title() not in self.titleEntry) & (f'{self.book_info['Author']}' not in offer["title"].title()):
+                self.titleEntry.append(offer["title"].title())
+                
+        self.book_info['Title'] = (max(self.titleEntry, key=len))
         self.book_info['ISBN'] = data['items'][0]['isbn']
-        self.book_info['Publisher'] = data['items'][0]['publisher']
         self._barcode_display_list()
         
                 
@@ -78,8 +76,8 @@ class BarcodeIntake(QObject):
         place_holder = 'NULL'
         display_list.append(self.book_info['Title'])
         display_list.append(self.book_info['Author'])
-        display_list.append(place_holder)
-        display_list.append(place_holder)
+        display_list.append(self.book_info['Genre'])
+        display_list.append(self.book_info['Publisher'])
         
         print(f'inside barcode display list {display_list}')
         
@@ -90,8 +88,9 @@ class BarcodeIntake(QObject):
     def _getAuthor(self):
 
         
-        url = "https://ocls.info/books-movies-more/books-magazines/"
-        #f_options is firefox options for the driver
+        url1 = "https://shop.harvard.com/book/"
+        url2 = self.barcode_string
+        url = url1 + url2
         
         #driver = Service('usr/lib/chromium-browser/chromedriver') Raspberry pi
         chrome_options = Options()
@@ -101,11 +100,7 @@ class BarcodeIntake(QObject):
         print ("Headless Firefox Initialized")
 
         # this is just to ensure that the page is loaded
-        time.sleep(2)        
-        search_box = driver.find_element(By.NAME, "searcharg")
-        search_box.send_keys(min(self.titleEntry, key=len))
-        search_box.submit()
-        time.sleep(3)  
+        time.sleep(1)  
 
         # renders JS code and stores all info in static HTML code. 
         html = driver.page_source 
@@ -113,13 +108,22 @@ class BarcodeIntake(QObject):
         # Now, we could simply apply bs4 to html tag
         soup = BeautifulSoup(html, "html.parser") 
 
-        #use the autho info text to get the first and last name using a comma as a delimiter
-        authorInfo = soup.find('div', {'class' : 'briefcitAuthor'}).text.strip()
-        authorLast = authorInfo[ : authorInfo.find(',')]
-        authorFirst = authorInfo[authorInfo.find(',')+2 : authorInfo.find(',', authorInfo.find(',')+1)].strip()        
-        author = f"{authorFirst} {authorLast}"
+        #This gets Author, Genre, and Publisher, can also get publishing date (instead of edition)
+        relatedInfo = soup.find('fieldset', {'id' : 'aba-product-details-fieldset'})
+        publisher = relatedInfo.find(string='Publisher:').next_element.strip()
+        pubDate = relatedInfo.find(string='Publication Date:').next_element.strip()
+        
+        genreLocation = soup.find('fieldset',{'class': 'collapsible abaproduct-related-editions'})
+        genreInfo = genreLocation.findNext('a').text.strip()
+        
+        authorLocation = soup.find('div',{'class': 'author'}).text.strip()
+        author = authorLocation[3:]
         
         self.book_info['Author'] = author
+        self.book_info['Genre'] = genreInfo
+        self.book_info['Publisher'] = publisher
+        
+        
         print(f'Value of author inside getAuthor {author}')
         driver.close()   
     
