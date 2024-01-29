@@ -1,16 +1,12 @@
-import sys  
 import requests 
 import json
 import time 
 from bs4 import BeautifulSoup 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-#import chromedriver_binary
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
 from database_handler import DataHandler
 from gui_class import ControlGui
-from time import sleep
 
 #This is the class that will be used to create the object
 # TO DO - change the title, auth, genre, etc to something more generic, so as to be able to be a BOOK or ITEM  
@@ -27,11 +23,13 @@ class BarcodeIntake(QObject):
         self.barcode_string = ""
         
         self.book_info = {
-                            "Title": '',
-                            'Author': '',
-                            'Genre' : '',
+                            "TITLE": '',
+                            'AUTHOR': '',
+                            'GENRE' : '',
                             'ISBN' : '',
-                            'Publisher': ''
+                            'PUBLISHER_DATE': '',
+                            'PUBLISHER' : '',
+                            'EDITION' : ''
                         }
         self.titleEntry = []
         self.headers = {
