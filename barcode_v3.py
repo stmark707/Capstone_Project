@@ -59,7 +59,7 @@ class BarcodeIntake(QObject):
         self._getAuthor()
         
         for offer in data['items'][0]['offers']: # I want to get 5 different titles from the offer section And does not contain the word By or by 
-            if (len(self.titleEntry) < 5) & (offer["title"].title() not in self.titleEntry) & (f'{self.book_info['Author']}' not in offer["title"].title()):
+            if (len(self.titleEntry) < 5) & (offer["title"].title() not in self.titleEntry) & (f'{self.book_info["Author"]}' not in offer["title"].title()):
                 self.titleEntry.append(offer["title"].title())
                 
         self.book_info['Title'] = (max(self.titleEntry, key=len))
@@ -98,7 +98,7 @@ class BarcodeIntake(QObject):
         print ("Headless Firefox Initialized")
 
         # this is just to ensure that the page is loaded
-        time.sleep(1)  
+        time.sleep(2)  
 
         # renders JS code and stores all info in static HTML code. 
         html = driver.page_source 

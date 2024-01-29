@@ -62,7 +62,7 @@ class Main(QObject):
         self.gui_window.search_database_button.clicked.connect(self.grab_isbn)
 
         
-        #apost = self.data_handler.post_request()
+        apost = self.data_handler.post_request()
         #test = self.data_handler.data_item_retrieval()
         #print(f'test: {test} apost: {apost}')
     def grab_isbn(self):

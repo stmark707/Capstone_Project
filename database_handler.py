@@ -6,14 +6,9 @@ from PyQt5.QtNetwork import QNetworkAccessManager, QNetworkRequest, QNetworkRepl
 
 class DataHandler(QObject):
     
-    recent_database_entries = pyqtSignal(list, name="Database id, ISBN")
-    database_search_results = pyqtSignal(list, name= "Database search results")
-    finished_method = pyqtSignal()
-    
     def __init__(self, gui_window: ControlGui):
         super().__init__()
         self.gui = gui_window
-        self.database_search_results.connect(self.gui.write_to_database_remove_item_table)
         self.agile_stock_website_post = 'https://agilestockweb.azurewebsites.net/api/inventoryitem' #type cast to QUrl
         self.url = QUrl()
         self.scheme = 'https'
@@ -21,18 +16,17 @@ class DataHandler(QObject):
         self.api_path = '/api/inventoryitem'
         self.api_search = '/api/inventoryitem/isbnsearch'
         self.agile_stock_get_by_isbn = ''
-        self.http_request = QWebEngineHttpRequest()
         self.server_request = QNetworkRequest()
         self.server_manager = QNetworkAccessManager()
         self.server_response = None
         self.data = [{
                         
-                        "TITLE": "this is another test",
-                        "AUTHOR": "embedded test 3",
+                        "TITLE": "this is another tests.py",
+                        "AUTHOR": "embedded test 700",
                         "PUBLISHER": "oewifbe",
                         "PUBLISHED_DATE": "38394423",
                         "GENRE": "fan fiction",
-                        "ISBN": "768445756"
+                        "ISBN": "24324535456452"
                         
                     }]
         
@@ -51,7 +45,8 @@ class DataHandler(QObject):
         print('inside reply parse')
         if reply.error() == QNetworkReply.NoError:
             data = reply.readAll()
-            print(f'data inside reply parse {data} type{type(data)}')
+            new_string = repr(data)
+            print(f'data inside reply parse {data} type{type(data)}\nNew String {new_string} type{type(new_string)}')
             if data:
                 print('not empty call parse method')
             print(self.api_info)
@@ -66,7 +61,7 @@ class DataHandler(QObject):
         self.server_request.setUrl(self.url)
         print(f'inside of post {self.url}')
         self.server_request.setHeader(QNetworkRequest.ContentTypeHeader, 'application/json')
-        self.server_manager.finished.connect(self._handle_reply)
+        self.server_manager.finished.connect(self.reply_parse)
         data = QJsonDocument(self.data).toJson()
         print(data)
         self.server_manager.post(self.server_request, data)
