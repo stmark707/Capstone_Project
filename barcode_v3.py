@@ -1,18 +1,10 @@
 import requests 
 import json
 from bs4 import BeautifulSoup 
-<<<<<<< HEAD
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
 from database_handler import DataHandler
 from gui_class import ControlGui
 
-=======
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
-from database_handler import DataHandler
-from gui_class import ControlGui
->>>>>>> 3bc77b7bea1abc495f8cbb3348216b0fdda440dc
 
 #This is the class that will be used to create the object
 # TO DO - change the title, auth, genre, etc to something more generic, so as to be able to be a BOOK or ITEM  
@@ -29,22 +21,12 @@ class BarcodeIntake(QObject):
         self.barcode_string = ""
         
         self.book_info = {
-<<<<<<< HEAD
                             'Title': '',
                             'Author': '',
                             'Genre' : '',
                             'ISBN' : '',
                             'Publisher': '',
                             'Publishing Date': ''
-=======
-                            "TITLE": '',
-                            'AUTHOR': '',
-                            'GENRE' : '',
-                            'ISBN' : '',
-                            'PUBLISHER_DATE': '',
-                            'PUBLISHER' : '',
-                            'EDITION' : ''
->>>>>>> 3bc77b7bea1abc495f8cbb3348216b0fdda440dc
                         }
         self.titleEntry = []
         self.headers = {
@@ -73,7 +55,6 @@ class BarcodeIntake(QObject):
                  
         self._getAuthor()
         
-<<<<<<< HEAD
         try:
             for offer in data['items'][0]['offers']: # I want to get 5 different titles from the offer section And does not contain the word By or by 
                 if (len(self.titleEntry) < 5) & (offer["title"].title() not in self.titleEntry) & (f'{self.book_info['Author']}' not in offer["title"].title()):
@@ -82,11 +63,6 @@ class BarcodeIntake(QObject):
         except:
             print('Error in barcode lookup')
             return
-=======
-        for offer in data['items'][0]['offers']: # I want to get 5 different titles from the offer section And does not contain the word By or by 
-            if (len(self.titleEntry) < 5) & (offer["title"].title() not in self.titleEntry) & (f'{self.book_info["Author"]}' not in offer["title"].title()):
-                self.titleEntry.append(offer["title"].title())
->>>>>>> 3bc77b7bea1abc495f8cbb3348216b0fdda440dc
                 
         self.book_info['Title'] = (max(self.titleEntry, key=len))
         self.book_info['ISBN'] = data['items'][0]['isbn']
@@ -117,16 +93,8 @@ class BarcodeIntake(QObject):
         url2 = self.barcode_string
         url = url1 + url2        
 
-<<<<<<< HEAD
         # grabs the html from the page 
         html = requests.get(url).text
-=======
-        # this is just to ensure that the page is loaded
-        time.sleep(2)  
-
-        # renders JS code and stores all info in static HTML code. 
-        html = driver.page_source 
->>>>>>> 3bc77b7bea1abc495f8cbb3348216b0fdda440dc
 
         # Now, we could simply apply bs4 to html tag
         soup = BeautifulSoup(html, "html.parser") 
