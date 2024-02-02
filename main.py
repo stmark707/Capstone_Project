@@ -77,19 +77,22 @@ class Main(QObject):
         self.gui_window.search_database_input_box.clear()
         
     def populate_entry_results(self):
-        print('inside populate entries')
-        print(f'\ninside main, populate entries {self.gui_window.items_for_database}\n')
+        #print('inside populate entries')
+        #print(f'\ninside main, populate entries {self.gui_window.items_for_database}\n')
         for (key, value) in self.gui_window.items_for_database.items():
             if value != '':
                 self.information_storage[key] = self.gui_window.items_for_database.get(key)
-                print(f'\ninside populate enrty results {self.information_storage}\n')
+                #print(f'\ninside populate enrty results {self.information_storage}\n')
         self.gui_window.write_selected_item_to_add_entry_fields()
           
     def add_item_to_database(self):
         check_value = self.gui_window.isbn_input_box.text()
-        if check_value:
+        check_isbn = self.information_storage.get('ISBN')
+        if check_value == check_isbn:
             print(self.information_storage)
             self.data_handler.post_request(self.information_storage)
+        elif check_value:
+            print()
         else:
             return
         

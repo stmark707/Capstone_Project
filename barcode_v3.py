@@ -21,12 +21,13 @@ class BarcodeIntake(QObject):
         self.barcode_string = ""
         
         self.book_info = {
-                            'Title': '',
-                            'Author': '',
-                            'Genre' : '',
+                            'TITLE': '',
+                            'AUTHOR': '',
+                            'GENRE' : '',
                             'ISBN' : '',
-                            'Publisher': '',
-                            'Publishing Date': ''
+                            'PUBLISHER DATE': '',
+                            'EDITION': '',
+                            'PUBLISHER': ''
                         }
         self.titleEntry = []
         self.headers = {
@@ -57,7 +58,7 @@ class BarcodeIntake(QObject):
         
         try:
             for offer in data['items'][0]['offers']: # I want to get 5 different titles from the offer section And does not contain the word By or by 
-                if (len(self.titleEntry) < 5) & (offer["title"].title() not in self.titleEntry) & (f'{self.book_info['Author']}' not in offer["title"].title()):
+                if (len(self.titleEntry) < 5) & (offer["title"].title() not in self.titleEntry) & (f'{self.book_info["AUTHOR"]}' not in offer["title"].title()):
                     self.titleEntry.append(offer["title"].title())
                     
         except:
@@ -114,10 +115,10 @@ class BarcodeIntake(QObject):
             authorLocation = soup.find('div',{'class': 'author'}).text.strip()
             author = authorLocation[3:]
             
-            self.book_info['Author'] = author.replace("'", '')
-            self.book_info['Genre'] = genreInfo
-            self.book_info['Publisher'] = publisher
-            self.book_info['Publishing Date'] = pubDate
+            self.book_info['AUTHOR'] = author.replace("'", '')
+            self.book_info['GENRE'] = genreInfo
+            self.book_info['PUBLISHER'] = publisher
+            self.book_info['PUBLISHER DATE'] = pubDate
             
         except:
             print('Error in barcode lookup')            

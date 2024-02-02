@@ -71,7 +71,7 @@ class ControlGui(QtWidgets.QMainWindow):
                                         '''
                                         
         self.add_item_list = [self.book_title_input_box, self.author_input_box, self.genre_input_box, self.isbn_input_box, self.publisher_date_input_box, 
-                                self.publisher_input_box, self.edition_input_box,]
+                                 self.edition_input_box, self.publisher_input_box]
         
         '''
             TODO: Get publisher or publishing date
@@ -79,13 +79,13 @@ class ControlGui(QtWidgets.QMainWindow):
         '''
         
         self.items_for_database = {
-                                    'book_title': '',
-                                    'author': '',
-                                    'genre' : '',
-                                    'publisher_date': '',
-                                    'edition' : '',
-                                    'isbn' : '',
-                                    'publisher': ''
+                                    'TITLE': '',
+                                    'AUTHOR': '',
+                                    'GENRE' : '',
+                                    'ISBN': '',
+                                    'PUBLISHER DATE' : '',
+                                    'PUBLISHER' : '',
+                                    'EDITION': ''
                                 }
         
         self.show()        
@@ -142,7 +142,13 @@ class ControlGui(QtWidgets.QMainWindow):
             if value != '':
                 info = self.items_for_database.get(key)
                 self.add_item_list[index].setText(info)
-            
+                print(info)
+                print(index)
+            else:
+                continue
+                
+    def grab_input_fields(self):
+        pass
     
     @pyqtSlot(list, name="Database search results")
     def write_to_database_remove_item_table(self, items_to_display):
