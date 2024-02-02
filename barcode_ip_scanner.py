@@ -133,8 +133,11 @@ class SR_1000(QObject):
             return
         except IndexError:
             return
-        self.barcode_string.emit(self.barcode)
-        self.finished_method.emit()
+        if len(self.barcode) != 13:
+            return
+        else:
+            self.barcode_string.emit(self.barcode)
+            self.finished_method.emit()
             
     @pyqtSlot(bool, name='Scanning Status')
     def stop_scanning(self):

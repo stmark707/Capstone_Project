@@ -70,8 +70,8 @@ class ControlGui(QtWidgets.QMainWindow):
 	                                                border-radius: 4px;
                                         '''
                                         
-        self.add_item_list = [self.book_title_input_box, self.author_input_box, self.genre_input_box, self.publisher_date_input_box, 
-                              self.edition_input_box, self.isbn_input_box, self.publisher_input_box]
+        self.add_item_list = [self.book_title_input_box, self.author_input_box, self.genre_input_box, self.isbn_input_box, self.publisher_date_input_box, 
+                                self.publisher_input_box, self.edition_input_box,]
         
         '''
             TODO: Get publisher or publishing date
@@ -116,6 +116,7 @@ class ControlGui(QtWidgets.QMainWindow):
     @pyqtSlot(object, name="Full book info")        
     def book_information_transfer(self, book_info):
         self.items_for_database = book_info.copy()
+        print(f'inside book information transfer {self.items_for_database}')
             
     def write_to_database_entry_table(self, recent_entry):
         # will take in a list, passed from barcode api
@@ -126,6 +127,7 @@ class ControlGui(QtWidgets.QMainWindow):
         row_count = self.barcode_result_table.rowCount()
         self.barcode_result_table.insertRow(row_count)
         
+        
         for item in range(4):
             temp = QTableWidgetItem(barcode_search_results[item])
             temp.setTextAlignment(Qt.AlignCenter)
@@ -134,9 +136,13 @@ class ControlGui(QtWidgets.QMainWindow):
             self.barcode_result_table.resizeRowToContents(row_count)
             self.barcode_result_table.scrollToBottom()
     
-    def write_selected_item_to_add_entry_fields(self, items_to_write):
+    def write_selected_item_to_add_entry_fields(self):
         #write items selected in barcode search table to their fields, 
-        pass
+        for (index, (key, value)) in enumerate(self.items_for_database.items()):
+            if value != '':
+                info = self.items_for_database.get(key)
+                self.add_item_list[index].setText(info)
+            
     
     @pyqtSlot(list, name="Database search results")
     def write_to_database_remove_item_table(self, items_to_display):

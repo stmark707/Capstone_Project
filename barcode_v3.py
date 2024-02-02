@@ -59,26 +59,30 @@ class BarcodeIntake(QObject):
         self._getAuthor()
         
         for offer in data['items'][0]['offers']: # I want to get 5 different titles from the offer section And does not contain the word By or by 
-            if (len(self.titleEntry) < 5) & (offer["title"].title() not in self.titleEntry) & (f'{self.book_info["Author"]}' not in offer["title"].title()):
+            if (len(self.titleEntry) < 5) & (offer["title"].title() not in self.titleEntry) & (f'{self.book_info["AUTHOR"]}' not in offer["title"].title()):
                 self.titleEntry.append(offer["title"].title())
                 
-        self.book_info['Title'] = (max(self.titleEntry, key=len))
+        title = (max(self.titleEntry, key=len))
+        self.book_info['TITLE'] = title.replace(',', ' ').replace("'",'')
+        print(f'inside barcode lookup {type(self.book_info["TITLE"])} {self.book_info["TITLE"]}')
         self.book_info['ISBN'] = data['items'][0]['isbn']
         self._barcode_display_list()
         
-                
-    pyqtSlot(list, name="barcode results list")           
+    @pyqtSlot(object, name="Full book info")
+    @pyqtSlot(list, name="barcode results list")           
     def _barcode_display_list(self):
         #TODO: update when publisheer and edition is ready
         display_list = []
         place_holder = 'NULL'
-        display_list.append(self.book_info['Title'])
-        display_list.append(self.book_info['Author'])
-        display_list.append(self.book_info['Genre'])
-        display_list.append(self.book_info['Publisher'])
+        display_list.append(self.book_info['TITLE'])
+        display_list.append(self.book_info['AUTHOR'])
+        display_list.append(self.book_info['GENRE'])
+        display_list.append(self.book_info['PUBLISHER'])
         
-        print(f'inside barcode display list {display_list}')
-        
+        print(f'book info passed to gui {self.book_info}')
+        print(f'inside barcode display list {display_list}\n')
+        self.book_stats.emit(self.book_info)
+        self.finished_method.emit()
         self.search_results.emit(display_list)
         self.finished_method.emit()
             
@@ -93,6 +97,7 @@ class BarcodeIntake(QObject):
         #driver = Service('usr/lib/chromium-browser/chromedriver') Raspberry pi
         chrome_options = Options()
         chrome_options.add_argument("--headless=new")
+        chrome_options.add_experimental_option('excludeSwitches', ['enable-logging']) #disable weird selenium log errors
         driver = webdriver.Chrome(options=chrome_options)
         driver.get(url)
         print ("Headless Firefox Initialized")
@@ -117,9 +122,9 @@ class BarcodeIntake(QObject):
         authorLocation = soup.find('div',{'class': 'author'}).text.strip()
         author = authorLocation[3:]
         
-        self.book_info['Author'] = author
-        self.book_info['Genre'] = genreInfo
-        self.book_info['Publisher'] = publisher
+        self.book_info['AUTHOR'] = author.replace("'",'')
+        self.book_info['GENRE'] = genreInfo
+        self.book_info['PUBLISHER'] = publisher
         
         
         print(f'Value of author inside getAuthor {author}')

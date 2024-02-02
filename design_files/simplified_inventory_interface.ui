@@ -628,7 +628,7 @@ QPushButton:hover:!pressed#launch_website_button
           <item>
            <widget class="QStackedWidget" name="database_actions_stacked_widget">
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="add_item_pane">
              <property name="styleSheet">
@@ -1527,7 +1527,7 @@ font-size: 12px;
                </column>
                <column>
                 <property name="text">
-                 <string>Edition</string>
+                 <string>Genre</string>
                 </property>
                </column>
                <column>
