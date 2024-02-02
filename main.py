@@ -92,7 +92,10 @@ class Main(QObject):
             print(self.information_storage)
             self.data_handler.post_request(self.information_storage)
         elif check_value:
-            print()
+            data_from_fields = self.gui_window.grab_input_fields()
+            self.gui_window.clear_all_add_item_fields()
+            self.data_handler.post_request(data_from_fields)
+            
         else:
             return
         

@@ -142,14 +142,26 @@ class ControlGui(QtWidgets.QMainWindow):
             if value != '':
                 info = self.items_for_database.get(key)
                 self.add_item_list[index].setText(info)
-                print(info)
-                print(index)
             else:
                 continue
                 
     def grab_input_fields(self):
-        pass
-    
+        items_for_database = {
+                                    'TITLE': '',
+                                    'AUTHOR': '',
+                                    'GENRE' : '',
+                                    'ISBN': '',
+                                    'PUBLISHED_DATE' : '',
+                                    'PUBLISHER' : '',
+                                    'EDITION': ''
+                                }
+        
+        for (index, (key, value)) in enumerate(items_for_database.items()):
+            items_for_database[key] = self.add_item_list[index].text()
+            print(items_for_database[key])
+        
+        return items_for_database
+                
     @pyqtSlot(list, name="Database search results")
     def write_to_database_remove_item_table(self, items_to_display):
         pass
