@@ -66,11 +66,9 @@ class Main(QObject):
         self.gui_window.search_database_button.clicked.connect(self.grab_isbn)
         self.gui_window.barcode_result_table.selectionModel().selectionChanged.connect(self.populate_entry_results)
         self.gui_window.submit_items_button.clicked.connect(self.add_item_to_database)
-
         
-        #apost = self.data_handler.post_request()
-        #test = self.data_handler.data_item_retrieval()
-        #print(f'test: {test} apost: {apost}')
+      
+        
     def grab_isbn(self):
         self.data_handler.agile_stock_get_by_isbn = self.gui_window.search_database_input_box.text()
         self.data_handler.data_item_retrieval()

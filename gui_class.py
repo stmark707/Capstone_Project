@@ -26,6 +26,8 @@ class ControlGui(QtWidgets.QMainWindow):
         self.add_items_button.clicked.connect(lambda: self.database_actions_stacked_widget.setCurrentIndex(0))
         self.remove_item_button.clicked.connect(lambda: self.database_actions_stacked_widget.setCurrentIndex(1))
         
+        self.clear_entry_table_button.clicked.connect(self.clear_recent_entry_table)
+        
         
         self.color_dict = {
                             'teal_blue': '#09486d',
@@ -41,6 +43,7 @@ class ControlGui(QtWidgets.QMainWindow):
                         }
         
         self.color_list = ['#52A40','#F57900', '#204A87', '#080808']
+        self.entry_color_list = ['#52A40', '#037120']
         
         self.barcode_default_comm_stylesheet = '''
                                                     color: White;
@@ -116,16 +119,27 @@ class ControlGui(QtWidgets.QMainWindow):
     @pyqtSlot(object, name="Full book info")        
     def book_information_transfer(self, book_info):
         self.items_for_database = book_info.copy()
-        print(f'inside book information transfer {self.items_for_database}')
+        
             
     def write_to_database_entry_table(self, recent_entry):
         # will take in a list, passed from barcode api
-        pass
+        row_count = self.database_entry_table.rowCount()
+        self.database_entry_table.insertRow(row_count)
+        
+        for item in range(2):
+            temp = QTableWidgetItem(recent_entry[item])
+            temp.setTextAlignment(Qt.AlignCenter)
+            temp.setForeground(QBrush(QColor(self.entry_color_list[item])))
+            self.database_entry_table.setItem(row_count, item, temp)
+            self.database_entry_table.resizeRowToContents(row_count)
+            self.database_entry_table.scrollToBottom()
+            
     
     @pyqtSlot(list, name="barcode result list")
     def write_to_barcode_search_table(self, barcode_search_results):
         row_count = self.barcode_result_table.rowCount()
         self.barcode_result_table.insertRow(row_count)
+        
         
         
         for item in range(4):
@@ -158,8 +172,6 @@ class ControlGui(QtWidgets.QMainWindow):
         
         for (index, (key, value)) in enumerate(items_for_database.items()):
             items_for_database[key] = self.add_item_list[index].text()
-            print(items_for_database[key])
-        
         return items_for_database
                 
     @pyqtSlot(list, name="Database search results")
@@ -170,6 +182,9 @@ class ControlGui(QtWidgets.QMainWindow):
         
         for items in range(len(self.add_item_list)):
             self.add_item_list[items].clear()
+            
+    def clear_recent_entry_table(self):
+        self.database_entry_table.clearContents()
     
         
 if __name__ == '__main__':

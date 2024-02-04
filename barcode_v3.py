@@ -47,7 +47,6 @@ class BarcodeIntake(QObject):
             TODO: Get publisher or publishing date
             TODO: Get book edition
         '''
-        print(f'Inside barcode lookup')
         lookupkey = self.apiKey + self.barcode_string
         
         resp = requests.get(lookupkey, self.headers)
@@ -67,7 +66,7 @@ class BarcodeIntake(QObject):
                 
         title = (max(self.titleEntry, key=len))
         self.book_info['TITLE'] = title.replace(',', ' ').replace("'",'')
-        print(f'inside barcode lookup {type(self.book_info["TITLE"])} {self.book_info["TITLE"]}')
+        
         self.book_info['ISBN'] = data['items'][0]['isbn']
         self._barcode_display_list()
         
@@ -82,8 +81,7 @@ class BarcodeIntake(QObject):
         display_list.append(self.book_info['GENRE'])
         display_list.append(self.book_info['PUBLISHER'])
         
-        print(f'book info passed to gui {self.book_info}')
-        print(f'inside barcode display list {display_list}\n')
+       
         self.book_stats.emit(self.book_info)
         self.finished_method.emit()
         self.search_results.emit(display_list)
@@ -124,12 +122,12 @@ class BarcodeIntake(QObject):
             print('Error in barcode lookup')            
             return        
         
-        print(f'Value of author inside getAuthor {author}')
+        
     
         
     @pyqtSlot(str, name="Scanned barcode")
     def check_barcode(self, barcode):
-        print(f'inside barcode api, passed string {barcode}')
+        
         if self.barcode_string == barcode:
             return
         elif barcode:
