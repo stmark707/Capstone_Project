@@ -196,6 +196,10 @@ class ControlGui(QtWidgets.QMainWindow):
     def clear_recent_entry_table(self):
         self.database_entry_table.clearContents()
         self.database_entry_table.setRowCount(0)
+        
+    def clear_deleted_item_table(self):
+        self.remove_item_table.clearContents()
+        self.remove_item_table.setRowCount(0)
     
         
 if __name__ == '__main__':

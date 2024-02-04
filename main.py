@@ -66,6 +66,8 @@ class Main(QObject):
         self.gui_window.clear_results_button.clicked.connect(self.gui_window.clear_all_add_item_fields)
         self.gui_window.search_database_button.clicked.connect(self.grab_isbn)
         self.gui_window.barcode_result_table.selectionModel().selectionChanged.connect(self.populate_entry_results)
+        #self.gui_window.remove_item_table.selectionModel().selectionChanged.connect(self.item_to_delete)
+        self.gui_window.remove_selected_item_button.clicked.connect(self.item_to_delete)
         self.gui_window.submit_items_button.clicked.connect(self.add_item_to_database)
         
       
@@ -98,6 +100,11 @@ class Main(QObject):
             
         else:
             return
+        
+    def item_to_delete(self):
+        print(f'id to delete {self.data_handler.id_to_delete} {type(self.data_handler.id_to_delete)}')
+        self.data_handler.delete_item_by_id()
+        self.gui_window.clear_deleted_item_table()
         
 def launch_agile_stock(url_addr):
     QDesktopServices.openUrl(url_addr)
