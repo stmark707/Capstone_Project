@@ -44,6 +44,7 @@ class ControlGui(QtWidgets.QMainWindow):
         
         self.color_list = ['#52A40','#F57900', '#204A87', '#080808']
         self.entry_color_list = ['#52A40', '#037120']
+        self.removal_color_list = ['#080808','#037120','#3465a4']
         
         self.barcode_default_comm_stylesheet = '''
                                                     color: White;
@@ -174,9 +175,18 @@ class ControlGui(QtWidgets.QMainWindow):
             items_for_database[key] = self.add_item_list[index].text()
         return items_for_database
                 
-    @pyqtSlot(list, name="Database search results")
+    
     def write_to_database_remove_item_table(self, items_to_display):
-        pass
+        row_count = self.remove_item_table.rowCount()
+        self.remove_item_table.insertRow(row_count)
+        
+        for item in range(3):
+            temp = QTableWidgetItem(items_to_display[item])
+            temp.setTextAlignment(Qt.AlignCenter)
+            temp.setForeground(QBrush(QColor(self.removal_color_list[item])))
+            self.remove_item_table.setItem(row_count, item, temp)
+            self.remove_item_table.resizeRowToContents(row_count)
+            self.remove_item_table.scrollToBottom()
     
     def clear_all_add_item_fields(self):
         
@@ -185,6 +195,7 @@ class ControlGui(QtWidgets.QMainWindow):
             
     def clear_recent_entry_table(self):
         self.database_entry_table.clearContents()
+        self.database_entry_table.setRowCount(0)
     
         
 if __name__ == '__main__':

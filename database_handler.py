@@ -15,9 +15,12 @@ class DataHandler(QObject):
         self.host = 'agilestockweb.azurewebsites.net'
         self.api_path = '/api/inventoryitem'
         self.api_search = '/api/inventoryitem/isbnsearch'
+        self.id_search = '/api/inventoryitem'
         self.agile_stock_get_by_isbn = ''
+        self.agile_stock_get_by_id = ''
         self.server_request = QNetworkRequest()
         self.server_manager = QNetworkAccessManager()
+        self.server_manager_two = QNetworkAccessManager()
         self.server_response = None
         self.data = {
                         
@@ -57,6 +60,29 @@ class DataHandler(QObject):
                 self.check_response(data)
         else:
             print(reply.errorString())
+            
+        
+    def retreival_parse(self, reply):
+        #print('inside reply parse')
+        if reply.error() == QNetworkReply.NoError:
+            data = reply.readAll()
+            #print(f'data inside reply parse {data} type{type(data)}\n')
+            if data:
+                print(f'\ndata in retrieval response isbn {data} type of {type(data)} {len(data)}\n')
+                self.remove_item_response(data)
+        else:
+            print(reply.errorString())
+            
+    def retreival_parse_id(self, reply):
+        #print('inside reply parse')
+        if reply.error() == QNetworkReply.NoError:
+            data = reply.readAll()
+            #print(f'data inside reply parse {data} type{type(data)}\n')
+            if data:
+                print(f'\ndata in retrieval response id: {data} type of {type(data)} {len(data)}\n')
+                self.remove_item_response_id(data)
+        else:
+            print(reply.errorString())
 
     def check_response(self, response_data):
         temp_dict = loads(response_data.data().decode("utf-8"))
@@ -73,7 +99,46 @@ class DataHandler(QObject):
         
             recent_entry = [database_id, isbn]
             self.gui.write_to_database_entry_table(recent_entry)
+        
             
+    def remove_item_response(self, response_data):
+        temp_dict = loads(response_data.data().decode("utf-8"))
+        print(f'inside remove item isbn response {temp_dict}')
+        try:
+            result_dict = temp_dict.pop()
+        except TypeError:
+            return
+        if "errorMessage" in result_dict:
+            print(f'inside first if clause isbn response, calling id methods')
+            self.data_item_retrieval_id()
+            
+        else:
+            
+            isbn = result_dict.get("ISBN")
+            database_id = result_dict.get("BOOKID")
+            database_id = str(database_id)
+            author = result_dict.get("AUTHOR")
+        
+            removal_request = [database_id, isbn, author]
+            self.gui.write_to_database_remove_item_table(removal_request)
+            
+    def remove_item_response_id(self, response_data):
+        temp_dict = loads(response_data.data().decode("utf-8"))
+        print(f'inside of response by id {temp_dict}')
+        try:
+            result_dict = temp_dict.pop()
+        except TypeError:
+            return
+        if "errorMessage" in temp_dict:
+            return
+        else:
+            isbn = result_dict.get("ISBN")
+            database_id = result_dict.get("BOOKID")
+            database_id = str(database_id)
+            author = result_dict.get("AUTHOR")
+        
+            removal_request = [database_id, isbn, author]
+            self.gui.write_to_database_remove_item_table(removal_request)
             
     
     def post_request(self, data):
@@ -94,23 +159,41 @@ class DataHandler(QObject):
         
         
         
-    def data_item_retrieval(self):
+    def data_item_retrieval_isbn(self):
         #ask database for isbn
         
-        
         self.agile_stock_get_by_isbn = '/' + self.agile_stock_get_by_isbn
-        
+        server_manager = QNetworkAccessManager()
         self.api_search = '/api/inventoryitem/isbnsearch' + self.agile_stock_get_by_isbn
-        print(self.agile_stock_get_by_isbn)
+        print(f'inside data item retrieval isbn = {self.agile_stock_get_by_isbn}')
         self.url.setScheme(self.scheme)
         self.url.setHost(self.host)
         self.url.setPath(self.api_search)
         
         
         server_request = QNetworkRequest(self.url)
-        self.server_manager.finished.connect(self.reply_parse)
+        self.server_manager_two.finished.connect(self.retreival_parse)
         
-        self.server_manager.get(server_request)
+        self.server_manager_two.get(server_request)
+        
+        
+             
+    def data_item_retrieval_id(self):
+        #ask database for id
+        
+        self.agile_stock_get_by_id = '/' + self.agile_stock_get_by_id
+        
+        self.id_search = '/api/inventoryitem' + self.agile_stock_get_by_id
+        print(f'inside data item retrieval id = {self.agile_stock_get_by_id}')
+        self.url.setScheme(self.scheme)
+        self.url.setHost(self.host)
+        self.url.setPath(self.id_search)
+        
+        
+        server_request = QNetworkRequest(self.url)
+        self.server_manager_two.finished.connect(self.retreival_parse_id)
+        
+        self.server_manager_two.get(server_request)
         
     def _internal_data_retreival(self):
     

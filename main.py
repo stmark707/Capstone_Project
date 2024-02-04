@@ -8,6 +8,8 @@ from barcode_ip_scanner import SR_1000
 
 '''
     TODO: Ensure we only see a 13 digit barcode, no partials.
+    TODO: redo table clear
+    TODO: fix retrieval results from isbn or id
 
 '''
 
@@ -62,7 +64,6 @@ class Main(QObject):
         self.gui_window.start_scanning_button.clicked.connect(trigger_scanner)
         self.gui_window.stop_scanning_button.clicked.connect(stop_scanner)
         self.gui_window.clear_results_button.clicked.connect(self.gui_window.clear_all_add_item_fields)
-        #self.gui_window.remove_selected_item_button.clicked.connect(self.data_handler.data_item_entry)
         self.gui_window.search_database_button.clicked.connect(self.grab_isbn)
         self.gui_window.barcode_result_table.selectionModel().selectionChanged.connect(self.populate_entry_results)
         self.gui_window.submit_items_button.clicked.connect(self.add_item_to_database)
@@ -71,7 +72,8 @@ class Main(QObject):
         
     def grab_isbn(self):
         self.data_handler.agile_stock_get_by_isbn = self.gui_window.search_database_input_box.text()
-        self.data_handler.data_item_retrieval()
+        self.data_handler.agile_stock_get_by_id = self.gui_window.search_database_input_box.text()
+        self.data_handler.data_item_retrieval_isbn()
         self.gui_window.search_database_input_box.clear()
         
     def populate_entry_results(self):
