@@ -202,9 +202,14 @@ class DataHandler(QObject):
         self.server_manager_find_item.get(server_request)
         
     def delete_item_by_id(self):
-        self.delete_item["delete_book_id"] = self.id_to_delete
-        #print(f'contents inside delete item {self.delete_item}')
-        self.delete_item = [self.delete_item]
+        print(f'type of delete itemm object {type(self.delete_item)} \n{self.delete_item}\n')
+
+        if isinstance(self.delete_item, dict):
+            self.delete_item["delete_book_id"] = self.id_to_delete
+            #print(f'contents inside delete item {self.delete_item}')
+            self.delete_item = [self.delete_item]
+        else:
+            self.delete_item[0]['delete_book_id'] = self.id_to_delete
         
         self.id_to_delete = '/' + str(self.id_to_delete)
         

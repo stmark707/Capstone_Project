@@ -37,11 +37,14 @@ class ControlGui(QtWidgets.QMainWindow):
         self.barcode_result_table.cellClicked.connect(self.item_tracker)
         
         isbn_regex = QRegExp("^\\d{13}$")
+        integer_reg = QRegExp("[0-9]+")
         
         isbn_validator = QRegExpValidator(isbn_regex, self)
+        integer_validator = QRegExpValidator(integer_reg,self)
         
         self.isbn_search_input_box.setValidator(isbn_validator)
         self.isbn_input_box.setValidator(isbn_validator)
+        self.search_database_input_box.setValidator(integer_validator)
         
         self.color_dict = {
                             'teal_blue': '#09486d',
