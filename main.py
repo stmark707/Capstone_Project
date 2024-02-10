@@ -67,6 +67,7 @@ class Main(QObject):
         #self.gui_window.remove_item_table.selectionModel().selectionChanged.connect(self.item_to_delete)
         self.gui_window.remove_selected_item_button.clicked.connect(self.item_to_delete)
         self.gui_window.submit_items_button.clicked.connect(self.add_item_to_database)
+        self.gui_window.start_manual_barcode_search_button.clicked.connect(self.pass_isbn_to_search_api)
         
       
         
@@ -104,6 +105,18 @@ class Main(QObject):
         self.data_handler.delete_item_by_id()
         self.gui_window.clear_deleted_item_table()
         
+    def pass_isbn_to_search_api(self):
+        self.barcode_api_thread.start()
+        isbn = self.gui_window.isbn_search_input_box.text()
+        if isbn:
+            isbn = str(isbn)
+            self.barcode_api.check_barcode(isbn)
+            self.barcode_api_thread.quit()
+            self.gui_window.clear_isbn_search_input_box()
+        else:
+            self.barcode_api_thread.quit()
+            
+        
 def launch_agile_stock(url_addr):
     QDesktopServices.openUrl(url_addr)
     
@@ -112,8 +125,12 @@ def trigger_scanner():
     _awake_thread()
     
 def _awake_thread():
+    
     for thread in thread_list:
-        thread.start()
+        if not thread.isRunning():
+            thread.start()
+        else:
+            continue
         
 def _quit_thread():
     for thread in thread_list:

@@ -2,7 +2,7 @@ from gui_class import ControlGui
 from PyQt5.QtCore import QObject, QUrl, QJsonDocument
 from PyQt5.QtNetwork import QNetworkAccessManager, QNetworkRequest, QNetworkReply
 from json import loads
-
+from time import sleep
 
 class DataHandler(QObject):
     
@@ -94,6 +94,7 @@ class DataHandler(QObject):
         if "errorMessage" in temp_dict:
             return
         elif "AS_BOOK" in temp_dict:
+            sleep(1) #Gives database time to create database ID, Raspberry pi sends GET request too quickly
             self._internal_data_retreival()
         else:
             result_dict = temp_dict.pop()

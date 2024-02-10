@@ -1,0 +1,1987 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>521</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AgileStock Interface</string>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: #1E447B;</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="title_frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <spacer name="title_spacer_left">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="agilestock_title_label">
+         <property name="styleSheet">
+          <string notr="true">color:#ffffff;
+font-family: &quot;Orbitron&quot;, sans-serif;
+font-size: 28px;</string>
+         </property>
+         <property name="text">
+          <string>AgileStock</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="title_spacer_right">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="central_frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,3">
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>4</number>
+       </property>
+       <property name="rightMargin">
+        <number>6</number>
+       </property>
+       <property name="bottomMargin">
+        <number>4</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="upper_frame">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(41, 60, 88, .50);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2,0,3">
+          <property name="spacing">
+           <number>8</number>
+          </property>
+          <property name="leftMargin">
+           <number>4</number>
+          </property>
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <property name="rightMargin">
+           <number>4</number>
+          </property>
+          <property name="bottomMargin">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QStackedWidget" name="barcode_api_stacked_widget">
+            <property name="currentIndex">
+             <number>1</number>
+            </property>
+            <widget class="QWidget" name="device_connected_page">
+             <layout class="QHBoxLayout" name="horizontalLayout_13">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="barcode_scanner_frame">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgba(250, 251,252, .85);</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QGridLayout" name="gridLayout">
+                 <property name="leftMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="spacing">
+                  <number>4</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QFrame" name="barcode_comm_status_frame">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: #FAFBFC;
+border-bottom-right-radius: 4px;
+border-top-left-radius: 4px;</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_3" stretch="2,1">
+                    <property name="leftMargin">
+                     <number>4</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>4</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>4</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="barcode_scanner_icon">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: none;</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="pixmap">
+                       <pixmap>barcode-scanner-64.png</pixmap>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="barcode_scanner_comm_label">
+                      <property name="styleSheet">
+                       <string notr="true">color: White;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #DBE9F3, stop: 0.1 #FF0000, stop: 0.5 #FF0000, stop: 1 #E90B0B, stop: 1 #BB0009);
+font-size: 14px;
+border-radius: 4px;</string>
+                      </property>
+                      <property name="text">
+                       <string>SR-1000</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QFrame" name="barcode_information_frame">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: #8a97a9;
+border-top-right-radius: 4px;
+border-bottom-left-radius: 4px;</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_4">
+                    <property name="spacing">
+                     <number>4</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>4</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>4</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>4</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>4</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="barcode_status_static_label">
+                      <property name="styleSheet">
+                       <string notr="true">color: black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 14px;</string>
+                      </property>
+                      <property name="text">
+                       <string>Barcode Status Message</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="barcode_status_dynamic_label">
+                      <property name="styleSheet">
+                       <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 12px;
+background-color: #fdfdfd;
+border-radius: 4px;</string>
+                      </property>
+                      <property name="text">
+                       <string>Read Unsuccessful</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QFrame" name="read_barcode_frame">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: #95BDE4;
+border-top-left-radius: 4px;
+border-bottom-right-radius: 4px;</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_5">
+                    <property name="spacing">
+                     <number>4</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>4</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>4</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>4</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>4</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="item_barcode_static_label">
+                      <property name="styleSheet">
+                       <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 14px;</string>
+                      </property>
+                      <property name="text">
+                       <string>Item Barcode</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="item_barcode_dynamic_label">
+                      <property name="styleSheet">
+                       <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 12px;
+background-color: #ffffff;
+border-radius: 4px;</string>
+                      </property>
+                      <property name="text">
+                       <string>{NULL}</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QFrame" name="scanner_command_frame">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: #5E768F;
+border-top-right-radius: 4px;
+border-bottom-left-radius: 4px;</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_6">
+                    <property name="spacing">
+                     <number>4</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>4</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>4</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>4</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>4</number>
+                    </property>
+                    <item>
+                     <widget class="QPushButton" name="start_scanning_button">
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton#start_scanning_button
+{	
+
+color: White;
+	font-family: &quot;SourceSansPro-Bold&quot;;
+	font-weight: 600;
+	font-size: 10px;
+
+
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98FF99, stop: 0.1 #78C26B, stop: 0.5 #4DB044, stop: 1 #4DB044, stop: 1 #248423);
+	border-style: outset;
+	border-width: 1px;
+	border-color:black;
+	padding: 6px;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+QPushButton:hover:!pressed#start_scanning_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #335A44, stop: 0.1 #78C26B, stop: 0.5 #4DB044, stop: 1 #4DB044, stop: 1 #335A44);
+	border-color:white;
+}
+</string>
+                      </property>
+                      <property name="text">
+                       <string>Start Scanning</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="stop_scanning_button">
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton#stop_scanning_button
+{	
+
+	color: White;
+	font-family: &quot;SourceSansPro-Bold&quot;;
+	font-weight: 600;
+	font-size: 10px;
+
+
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FFD1AD, stop: 0.1 #FF8500, stop: 0.5 #FF7500 stop: 1 #FF6500, stop: 1 #FF5500);
+	border-style: outset;
+	border-width: 1px;
+	border-color:black;
+	padding: 6px;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+QPushButton:hover:!pressed#stop_scanning_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #C46A33, stop: 0.1 #FF8500, stop: 0.5 #FF7500 stop: 1 #FF6500, stop: 1 #C46A33);
+	border-color:white;
+}
+</string>
+                      </property>
+                      <property name="text">
+                       <string>Stop Scanning</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="no_device_connected_page">
+             <layout class="QHBoxLayout" name="horizontalLayout_14">
+              <property name="spacing">
+               <number>4</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="main_background_frame">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgba(250, 251,252, .85);</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_13">
+                 <item>
+                  <widget class="QFrame" name="static_title_label_frame">
+                   <property name="styleSheet">
+                    <string notr="true">background-color:none;</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_16">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="barcode_search_title_label">
+                      <property name="styleSheet">
+                       <string notr="true">color: black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 14px;
+border: None;</string>
+                      </property>
+                      <property name="text">
+                       <string>Please enter 13-digit ISBN number:</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="isbn_input_frame">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: none;</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_17">
+                    <item>
+                     <widget class="QLineEdit" name="isbn_search_input_box">
+                      <property name="styleSheet">
+                       <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 14px;
+border-radius: none;
+border-style: outset;
+border-width: 1px;
+border-color:black;</string>
+                      </property>
+                      <property name="inputMask">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="barcode_search_button_frame">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: none;</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_15">
+                    <item>
+                     <widget class="QPushButton" name="clear_input_box_button">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>34</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton#clear_input_box_button
+{	
+
+color: black;
+	font-family: &quot;SourceSansPro-Bold&quot;;
+	font-weight: 600;
+	font-size: 12px;
+
+
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d6d7d8, stop: 0.1 #c6c6c8, stop: 0.5 #c6c6c8, stop: 1 #b5b6b9, stop: 1 #8a8b8e);
+	border-style: outset;
+	border-width: 1px;
+	border-color:black;
+	padding: 6px;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+QPushButton:hover:!pressed#clear_input_box_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d6d7d8, stop: 0.1 #c6c6c8, stop: 0.5 #c6c6c8, stop: 1 #b5b6b9, stop: 1 #575759);
+	border-color: orange;
+}
+</string>
+                      </property>
+                      <property name="text">
+                       <string>Clear </string>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>30</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="start_manual_barcode_search_button">
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton#start_manual_barcode_search_button
+{	
+
+color: black;
+	font-family: &quot;SourceSansPro-Bold&quot;;
+	font-weight: 600;
+	font-size: 12px;
+
+
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d6d7d8, stop: 0.1 #c6c6c8, stop: 0.5 #c6c6c8, stop: 1 #b5b6b9, stop: 1 #8a8b8e);
+	border-style: outset;
+	border-width: 1px;
+	border-color:black;
+	padding: 6px;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+QPushButton:hover:!pressed#start_manual_barcode_search_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d6d7d8, stop: 0.1 #c6c6c8, stop: 0.5 #c6c6c8, stop: 1 #b5b6b9, stop: 1 #575759);
+	border-color: orange;
+}
+</string>
+                      </property>
+                      <property name="text">
+                       <string>Start Search</string>
+                      </property>
+                      <property name="icon">
+                       <iconset>
+                        <normaloff>icons8-search-property-30.png</normaloff>icons8-search-property-30.png</iconset>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="navigation_frame">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(94,118,143, .85);</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_7">
+             <property name="spacing">
+              <number>4</number>
+             </property>
+             <property name="leftMargin">
+              <number>6</number>
+             </property>
+             <property name="topMargin">
+              <number>4</number>
+             </property>
+             <property name="rightMargin">
+              <number>6</number>
+             </property>
+             <property name="bottomMargin">
+              <number>4</number>
+             </property>
+             <item>
+              <widget class="QGroupBox" name="device_or_manual_groupbox">
+               <property name="styleSheet">
+                <string notr="true">color: white;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 12px;
+border: None;</string>
+               </property>
+               <property name="title">
+                <string>Manual Search</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_12">
+                <property name="spacing">
+                 <number>1</number>
+                </property>
+                <property name="leftMargin">
+                 <number>4</number>
+                </property>
+                <property name="topMargin">
+                 <number>10</number>
+                </property>
+                <property name="rightMargin">
+                 <number>4</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QRadioButton" name="barcode_scanner_radio_button">
+                  <property name="text">
+                   <string>Barcode Scanner</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QRadioButton" name="no_device_radio_button">
+                  <property name="text">
+                   <string>No Device Connected</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="add_items_button">
+               <property name="styleSheet">
+                <string notr="true">QPushButton#add_items_button
+{	
+
+color: White;
+	font-family: &quot;SourceSansPro-Bold&quot;;
+	font-weight: 600;
+	font-size: 12px;
+
+
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98FF99, stop: 0.1 #78C26B, stop: 0.5 #4DB044, stop: 1 #4DB044, stop: 1 #248423);
+	border-style: outset;
+	border-width: 1px;
+	border-color:black;
+	padding: 6px;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+QPushButton:hover:!pressed#add_items_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #335A44, stop: 0.1 #78C26B, stop: 0.5 #4DB044, stop: 1 #4DB044, stop: 1 #335A44);
+	border-color:white;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>Add Items</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="remove_item_button">
+               <property name="styleSheet">
+                <string notr="true">QPushButton#remove_item_button
+{	
+
+color: White;
+	font-family: &quot;SourceSansPro-Bold&quot;;
+	font-weight: 600;
+	font-size: 12px;
+
+
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #DBE9F3, stop: 0.1 #FF0000, stop: 0.5 #FF0000, stop: 1 #E90B0B, stop: 1 #BB0009);
+	border-style: outset;
+	border-width: 1px;
+	border-color:black;
+	padding: 6px;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+QPushButton:hover:!pressed#remove_item_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #9A1505, stop: 0.1 #FF0000, stop: 0.5 #FF0000, stop: 1 #C71E08, stop: 1 #62130A);
+	border-color:white;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>Remove Items</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="launch_website_button">
+               <property name="styleSheet">
+                <string notr="true">QPushButton#launch_website_button
+{	
+
+color: black;
+	font-family: &quot;SourceSansPro-Bold&quot;;
+	font-weight: 600;
+	font-size: 12px;
+
+
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d6d7d8, stop: 0.1 #c6c6c8, stop: 0.5 #c6c6c8, stop: 1 #b5b6b9, stop: 1 #8a8b8e);
+	border-style: outset;
+	border-width: 1px;
+	border-color:black;
+	padding: 6px;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+QPushButton:hover:!pressed#launch_website_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d6d7d8, stop: 0.1 #c6c6c8, stop: 0.5 #c6c6c8, stop: 1 #b5b6b9, stop: 1 #575759);
+	border-color: orange;
+}
+</string>
+               </property>
+               <property name="text">
+                <string>Launch Website</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Maximum</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>6</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QStackedWidget" name="database_actions_stacked_widget">
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <widget class="QWidget" name="add_item_pane">
+             <property name="styleSheet">
+              <string notr="true">background-color: #55698d;</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_9" stretch="0,1">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="add_item_title_frame">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_6">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>2</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="add_item_title_label">
+                   <property name="styleSheet">
+                    <string notr="true">color: White;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 12px;</string>
+                   </property>
+                   <property name="text">
+                    <string>Item Entry</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="add_item_background_frame">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_7">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QFrame" name="add_item_second_frame">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_3">
+                    <property name="leftMargin">
+                     <number>4</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>4</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="horizontalSpacing">
+                     <number>6</number>
+                    </property>
+                    <property name="verticalSpacing">
+                     <number>4</number>
+                    </property>
+                    <item row="7" column="1">
+                     <widget class="QPushButton" name="clear_results_button">
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton#clear_results_button
+{	
+
+color: black;
+	font-family: &quot;SourceSansPro-Bold&quot;;
+	font-weight: 600;
+	font-size: 11px;
+
+
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d6d7d8, stop: 0.1 #c6c6c8, stop: 0.5 #c6c6c8, stop: 1 #b5b6b9, stop: 1 #8a8b8e);
+	border-style: outset;
+	border-width: 1px;
+	border-color:black;
+	padding: 6px;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+QPushButton:hover:!pressed#clear_results_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d6d7d8, stop: 0.1 #c6c6c8, stop: 0.5 #c6c6c8, stop: 1 #b5b6b9, stop: 1 #575759);
+	border-color: orange;
+}
+</string>
+                      </property>
+                      <property name="text">
+                       <string>Clear Form</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLineEdit" name="book_title_input_box">
+                      <property name="styleSheet">
+                       <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 11px;
+border-radius: none;
+border-style: outset;
+border-width: 1px;
+border-color:black;</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="2">
+                     <widget class="QLabel" name="publisher_title_label">
+                      <property name="styleSheet">
+                       <string notr="true">color: white;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 11px;</string>
+                      </property>
+                      <property name="text">
+                       <string>Publisher:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="2">
+                     <widget class="QLabel" name="isbn_title_label">
+                      <property name="styleSheet">
+                       <string notr="true">color: white;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 11px;</string>
+                      </property>
+                      <property name="text">
+                       <string>ISBN:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="3">
+                     <widget class="QLineEdit" name="edition_input_box">
+                      <property name="styleSheet">
+                       <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 11px;
+border-radius: none;
+border-style: outset;
+border-width: 1px;
+border-color:black;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="2">
+                     <widget class="QLabel" name="edition_title_label">
+                      <property name="styleSheet">
+                       <string notr="true">color: white;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 11px;</string>
+                      </property>
+                      <property name="text">
+                       <string>Edition:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="3">
+                     <widget class="QLineEdit" name="isbn_input_box">
+                      <property name="styleSheet">
+                       <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 11px;
+border-radius: none;
+border-style: outset;
+border-width: 1px;
+border-color:black;</string>
+                      </property>
+                      <property name="inputMask">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="3">
+                     <widget class="QLineEdit" name="publisher_input_box">
+                      <property name="styleSheet">
+                       <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 11px;
+border-radius: none;
+border-style: outset;
+border-width: 1px;
+border-color:black;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="book_title_label">
+                      <property name="styleSheet">
+                       <string notr="true">color: white;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 11px;</string>
+                      </property>
+                      <property name="text">
+                       <string>Book Title:</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="1">
+                     <widget class="QLineEdit" name="author_input_box">
+                      <property name="styleSheet">
+                       <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 11px;
+border-radius: none;
+border-style: outset;
+border-width: 1px;
+border-color:black;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="QLabel" name="author_title_label">
+                      <property name="styleSheet">
+                       <string notr="true">color: white;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 11px;</string>
+                      </property>
+                      <property name="text">
+                       <string>Author:</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="0">
+                     <widget class="QLabel" name="genre_title_label">
+                      <property name="styleSheet">
+                       <string notr="true">color: white;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 11px;</string>
+                      </property>
+                      <property name="text">
+                       <string>Genre:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="0">
+                     <widget class="QLabel" name="publisher_date_title_label">
+                      <property name="styleSheet">
+                       <string notr="true">color: white;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 11px;</string>
+                      </property>
+                      <property name="text">
+                       <string>Publisher Date:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="1">
+                     <widget class="QLineEdit" name="genre_input_box">
+                      <property name="styleSheet">
+                       <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 11px;
+border-radius: none;
+border-style: outset;
+border-width: 1px;
+border-color:black;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="1">
+                     <widget class="QLineEdit" name="publisher_date_input_box">
+                      <property name="styleSheet">
+                       <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 11px;
+border-radius: none;
+border-style: outset;
+border-width: 1px;
+border-color:black;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="7" column="3">
+                     <widget class="QPushButton" name="submit_items_button">
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton#submit_items_button
+{	
+
+color: black;
+	font-family: &quot;SourceSansPro-Bold&quot;;
+	font-weight: 600;
+	font-size: 11px;
+
+
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d6d7d8, stop: 0.1 #c6c6c8, stop: 0.5 #c6c6c8, stop: 1 #b5b6b9, stop: 1 #8a8b8e);
+	border-style: outset;
+	border-width: 1px;
+	border-color:black;
+	padding: 6px;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+QPushButton:hover:!pressed#submit_items_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d6d7d8, stop: 0.1 #c6c6c8, stop: 0.5 #c6c6c8, stop: 1 #b5b6b9, stop: 1 #575759);
+	border-color: orange;
+}
+</string>
+                      </property>
+                      <property name="text">
+                       <string>Submit Item</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="remove_item_pane">
+             <property name="styleSheet">
+              <string notr="true">background-color: #55698d;
+
+</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_8" stretch="0,1,2,0">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="remove_entry_title_frame">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_8">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="remove_entry_title_label">
+                   <property name="styleSheet">
+                    <string notr="true">color: White;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 12px;</string>
+                   </property>
+                   <property name="text">
+                    <string>Remove Entry</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="search_item_frame">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_3">
+                 <item>
+                  <spacer name="horizontalSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::MinimumExpanding</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>30</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="search_database_input_box">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>165</width>
+                     <height>29</height>
+                    </size>
+                   </property>
+                   <property name="toolTip">
+                    <string extracomment="Search for item in database to remove"/>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 10px;
+border-radius: none;
+border-style: outset;
+border-width: 1px;
+border-color:black;</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>ISBN or Database ID</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QToolButton" name="search_database_button">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>30</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QToolButton#search_database_button
+{	
+
+color: black;
+	font-family: &quot;SourceSansPro-Bold&quot;;
+	font-weight: 600;
+	font-size: 12px;
+
+
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d6d7d8, stop: 0.1 #c6c6c8, stop: 0.5 #c6c6c8, stop: 1 #b5b6b9, stop: 1 #8a8b8e);
+	border-style: outset;
+	border-width: 1px;
+	border-color:black;
+	padding: 6px;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+QToolButton:hover:!pressed#search_database_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d6d7d8, stop: 0.1 #c6c6c8, stop: 0.5 #c6c6c8, stop: 1 #b5b6b9, stop: 1 #575759);
+	border-color: orange;
+}
+</string>
+                   </property>
+                   <property name="text">
+                    <string>...</string>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>search_database_icon_30x30.png</normaloff>search_database_icon_30x30.png</iconset>
+                   </property>
+                   <property name="autoRaise">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_2">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::MinimumExpanding</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>30</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="display_query_results">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_5">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>2</number>
+                 </property>
+                 <item>
+                  <widget class="QTableWidget" name="remove_item_table">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>416</width>
+                     <height>80</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: #D1D1D8;
+font-size: 12px;
+</string>
+                   </property>
+                   <property name="horizontalScrollBarPolicy">
+                    <enum>Qt::ScrollBarAlwaysOff</enum>
+                   </property>
+                   <property name="alternatingRowColors">
+                    <bool>true</bool>
+                   </property>
+                   <attribute name="horizontalHeaderStretchLastSection">
+                    <bool>true</bool>
+                   </attribute>
+                   <column>
+                    <property name="text">
+                     <string>Database ID</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>ISBN</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Author</string>
+                    </property>
+                   </column>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="remove_selected_item_button_frame">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                 <item>
+                  <spacer name="horizontalSpacer_3">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>15</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="remove_selected_item_button">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton#remove_selected_item_button
+{	
+
+color: black;
+	font-family: &quot;SourceSansPro-Bold&quot;;
+	font-weight: 600;
+	font-size: 12px;
+
+
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d6d7d8, stop: 0.1 #c6c6c8, stop: 0.5 #c6c6c8, stop: 1 #b5b6b9, stop: 1 #8a8b8e);
+	border-style: outset;
+	border-width: 1px;
+	border-color:black;
+	padding: 6px;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+QPushButton:hover:!pressed#remove_selected_item_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d6d7d8, stop: 0.1 #c6c6c8, stop: 0.5 #c6c6c8, stop: 1 #b5b6b9, stop: 1 #575759);
+	border-color: orange;
+}
+</string>
+                   </property>
+                   <property name="text">
+                    <string>Delete Selected Item</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_4">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>15</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="lower_frame">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(41, 60, 88, .50);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="2,1">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="item_result_frame">
+            <property name="styleSheet">
+             <string notr="true">background-color: #485b70;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_10" stretch="1,0">
+             <property name="spacing">
+              <number>4</number>
+             </property>
+             <property name="leftMargin">
+              <number>4</number>
+             </property>
+             <property name="topMargin">
+              <number>4</number>
+             </property>
+             <property name="rightMargin">
+              <number>4</number>
+             </property>
+             <property name="bottomMargin">
+              <number>4</number>
+             </property>
+             <item>
+              <widget class="QFrame" name="item_result_title_frame">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_10">
+                <property name="spacing">
+                 <number>4</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="barcode_result_title">
+                  <property name="styleSheet">
+                   <string notr="true">color: White;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 14px;</string>
+                  </property>
+                  <property name="text">
+                   <string>Barcode Search Results</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="isbn_search_dynamic_label">
+                  <property name="styleSheet">
+                   <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 14px;
+background-color: #ffffff;
+</string>
+                  </property>
+                  <property name="text">
+                   <string>{NULL}</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTableWidget" name="barcode_result_table">
+               <property name="styleSheet">
+                <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: #D1D1D8;
+font-size: 12px;
+</string>
+               </property>
+               <property name="horizontalScrollBarPolicy">
+                <enum>Qt::ScrollBarAlwaysOff</enum>
+               </property>
+               <property name="alternatingRowColors">
+                <bool>true</bool>
+               </property>
+               <attribute name="horizontalHeaderStretchLastSection">
+                <bool>true</bool>
+               </attribute>
+               <column>
+                <property name="text">
+                 <string>Book Title</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Author</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Genre</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Publisher</string>
+                </property>
+               </column>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="database_entry_result_frame">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_11">
+             <property name="spacing">
+              <number>6</number>
+             </property>
+             <property name="leftMargin">
+              <number>4</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>4</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QFrame" name="database_entry_title_frame">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_11">
+                <item>
+                 <widget class="QLabel" name="database_entry_title">
+                  <property name="styleSheet">
+                   <string notr="true">color: White;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: none;
+font-size: 14px;</string>
+                  </property>
+                  <property name="text">
+                   <string>Recent Database Entries</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTableWidget" name="database_entry_table">
+               <property name="styleSheet">
+                <string notr="true">color: Black;
+font-family: &quot;SourceSansPro-Bold&quot;;
+font-weight: 600;
+background-color: #D1D1D8;
+font-size: 12px;
+</string>
+               </property>
+               <property name="horizontalScrollBarPolicy">
+                <enum>Qt::ScrollBarAlwaysOff</enum>
+               </property>
+               <property name="alternatingRowColors">
+                <bool>true</bool>
+               </property>
+               <attribute name="horizontalHeaderStretchLastSection">
+                <bool>true</bool>
+               </attribute>
+               <column>
+                <property name="text">
+                 <string>Database ID</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>ISBN</string>
+                </property>
+               </column>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="clear_table_button_frame">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_12">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>4</number>
+                </property>
+                <property name="topMargin">
+                 <number>4</number>
+                </property>
+                <property name="rightMargin">
+                 <number>4</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>4</number>
+                </property>
+                <item>
+                 <widget class="QPushButton" name="clear_entry_table_button">
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton#clear_entry_table_button
+{	
+
+color: black;
+	font-family: &quot;SourceSansPro-Bold&quot;;
+	font-weight: 600;
+	font-size: 12px;
+
+
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d6d7d8, stop: 0.1 #c6c6c8, stop: 0.5 #c6c6c8, stop: 1 #b5b6b9, stop: 1 #8a8b8e);
+	border-style: outset;
+	border-width: 1px;
+	border-color:black;
+	padding: 6px;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+QPushButton:hover:!pressed#clear_entry_table_button
+{
+	background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #d6d7d8, stop: 0.1 #c6c6c8, stop: 0.5 #c6c6c8, stop: 1 #b5b6b9, stop: 1 #575759);
+	border-color: orange;
+}
+</string>
+                  </property>
+                  <property name="text">
+                   <string>Clear Table Contents</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

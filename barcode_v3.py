@@ -83,7 +83,7 @@ class BarcodeIntake(QObject):
         display_list.append(self.book_info['AUTHOR'])
         display_list.append(self.book_info['GENRE'])
         display_list.append(self.book_info['PUBLISHER'])
-        print(f'inside barcode display list {display_list}') 
+       
        
         self.book_stats.emit(self.book_info)
         self.finished_method.emit()

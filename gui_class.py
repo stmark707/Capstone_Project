@@ -1,7 +1,7 @@
 from PyQt5 import uic, QtWidgets, QtCore
 from PyQt5.QtWidgets import QHeaderView, QTableWidgetItem, QApplication
-from PyQt5.QtCore import Qt, pyqtSlot
-from PyQt5.QtGui import QColor, QBrush, QDoubleValidator
+from PyQt5.QtCore import Qt, pyqtSlot, QRegExp
+from PyQt5.QtGui import QColor, QBrush, QRegExpValidator
 import sys
 
 '''
@@ -12,7 +12,10 @@ class ControlGui(QtWidgets.QMainWindow):
     
     def __init__(self):
         super(ControlGui, self).__init__()
-        uic.loadUi('design_files/simplified_inventory_interface.ui', self)
+        uic.loadUi('design_files/simplified_inventory_interface_manual_search_added.ui', self)
+        
+        self.database_actions_stacked_widget.setCurrentIndex(0)
+        self.barcode_api_stacked_widget.setCurrentIndex(0)
         
         self.barcode_result_table.horizontalHeader().setSectionResizeMode(QHeaderView.Fixed)
         self.barcode_result_table.verticalHeader().setSectionResizeMode(QHeaderView.Fixed)
@@ -28,6 +31,15 @@ class ControlGui(QtWidgets.QMainWindow):
         
         self.clear_entry_table_button.clicked.connect(self.clear_recent_entry_table)
         
+        self.barcode_scanner_radio_button.toggled.connect(lambda: self.barcode_api_stacked_widget.setCurrentIndex(0))
+        self.no_device_radio_button.toggled.connect(lambda: self.barcode_api_stacked_widget.setCurrentIndex(1))
+        
+        isbn_regex = QRegExp("^\\d{13}$")
+        
+        isbn_validator = QRegExpValidator(isbn_regex, self)
+        
+        self.isbn_search_input_box.setValidator(isbn_validator)
+        self.isbn_input_box.setValidator(isbn_validator)
         
         self.color_dict = {
                             'teal_blue': '#09486d',
@@ -141,7 +153,7 @@ class ControlGui(QtWidgets.QMainWindow):
         row_count = self.barcode_result_table.rowCount()
         self.barcode_result_table.insertRow(row_count)
         
-        print(f'inside barcode search table {barcode_search_results}')
+        
         
         for item in range(4):
             temp = QTableWidgetItem(barcode_search_results[item])
@@ -201,6 +213,8 @@ class ControlGui(QtWidgets.QMainWindow):
         self.remove_item_table.clearContents()
         self.remove_item_table.setRowCount(0)
     
+    def clear_isbn_search_input_box(self):
+        self.isbn_search_input_box.setText('')
         
 if __name__ == '__main__':
     app = QApplication([])
