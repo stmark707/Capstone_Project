@@ -57,7 +57,7 @@ class BarcodeIntake(QObject):
         
         try:
             for offer in data['items'][0]['offers']: # I want to get 5 different titles from the offer section And does not contain the word By or by 
-                print(f'\n\n inside barcode lookup for loop {self.titleEntry}')
+                
                 if (len(self.titleEntry) < 5) & (offer["title"].title() not in self.titleEntry) & (f'{self.book_info["AUTHOR"]}' not in offer["title"].title()):
                     self.titleEntry.append(offer["title"].title())
                     

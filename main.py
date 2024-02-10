@@ -110,6 +110,7 @@ class Main(QObject):
         isbn = self.gui_window.isbn_search_input_box.text()
         if isbn:
             isbn = str(isbn)
+            self.gui_window.barcode_string(isbn)
             self.barcode_api.check_barcode(isbn)
             self.barcode_api_thread.quit()
             self.gui_window.clear_isbn_search_input_box()
