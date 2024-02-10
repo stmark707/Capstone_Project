@@ -104,6 +104,7 @@ class DataHandler(QObject):
         
             recent_entry = [database_id, isbn]
             self.gui.write_to_database_entry_table(recent_entry)
+            self.gui.clear_all_add_item_fields()
         
             
     def remove_item_response(self, response_data):
