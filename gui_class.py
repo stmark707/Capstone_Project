@@ -2,7 +2,7 @@ from PyQt5 import uic, QtWidgets, QtCore
 from PyQt5.QtWidgets import QHeaderView, QTableWidgetItem, QApplication
 from PyQt5.QtCore import Qt, pyqtSlot, QRegExp
 from PyQt5.QtGui import QColor, QBrush, QRegExpValidator
-import sys
+from json import dumps, loads
 
 '''
     TODO: write function to grab selected item from table, pass it to items for database
@@ -33,6 +33,8 @@ class ControlGui(QtWidgets.QMainWindow):
         
         self.barcode_scanner_radio_button.toggled.connect(lambda: self.barcode_api_stacked_widget.setCurrentIndex(0))
         self.no_device_radio_button.toggled.connect(lambda: self.barcode_api_stacked_widget.setCurrentIndex(1))
+        
+        self.barcode_result_table.cellClicked.connect(self.item_tracker)
         
         isbn_regex = QRegExp("^\\d{13}$")
         
@@ -89,10 +91,7 @@ class ControlGui(QtWidgets.QMainWindow):
         self.add_item_list = [self.book_title_input_box, self.author_input_box, self.genre_input_box, self.isbn_input_box, self.publisher_date_input_box, 
                                  self.edition_input_box, self.publisher_input_box]
         
-        '''
-            TODO: Get publisher or publishing date
-            TODO: Get book edition
-        '''
+        self.item_result_object_list= []
         
         self.items_for_database = {
                                     'TITLE': '',
@@ -132,6 +131,10 @@ class ControlGui(QtWidgets.QMainWindow):
     @pyqtSlot(object, name="Full book info")        
     def book_information_transfer(self, book_info):
         self.items_for_database = book_info.copy()
+        temp_dict = book_info.copy()
+        self.item_result_object_list.append(temp_dict)
+        #print(f'object in list = {self.item_result_object_list} ')
+        #print(f'book info, copied dictionary {self.items_for_database}')
         
             
     def write_to_database_entry_table(self, recent_entry):
@@ -163,11 +166,16 @@ class ControlGui(QtWidgets.QMainWindow):
             self.barcode_result_table.resizeRowToContents(row_count)
             self.barcode_result_table.scrollToBottom()
     
-    def write_selected_item_to_add_entry_fields(self):
+    def item_tracker(self, current_row, current_column):
+        json_list = dumps(self.item_result_object_list)
+        json_dict = loads(json_list)[current_row]
+        self._write_selected_item_to_add_entry_fields(json_dict)
+    
+    def _write_selected_item_to_add_entry_fields(self, items_for_database):
         #write items selected in barcode search table to their fields, 
-        for (index, (key, value)) in enumerate(self.items_for_database.items()):
+        for (index, (key, value)) in enumerate(items_for_database.items()):
             if value != '':
-                info = self.items_for_database.get(key)
+                info = items_for_database.get(key)
                 self.add_item_list[index].setText(info)
             else:
                 continue

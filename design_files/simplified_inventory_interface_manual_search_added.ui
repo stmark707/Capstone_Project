@@ -523,10 +523,14 @@ QPushButton:hover:!pressed#stop_scanning_button
                  <enum>QFrame::Raised</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_13">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
                  <item>
                   <widget class="QFrame" name="static_title_label_frame">
                    <property name="styleSheet">
-                    <string notr="true">background-color:none;</string>
+                    <string notr="true">background-color:none;
+border: none;</string>
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
@@ -752,7 +756,7 @@ font-size: 12px;
 border: None;</string>
                </property>
                <property name="title">
-                <string>Manual Search</string>
+                <string>Search Style</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>

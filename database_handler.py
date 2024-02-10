@@ -108,7 +108,7 @@ class DataHandler(QObject):
             
     def remove_item_response(self, response_data):
         temp_dict = loads(response_data.data().decode("utf-8"))
-        print(f'inside remove item isbn response {temp_dict}')
+        #print(f'inside remove item isbn response {temp_dict}')
         try:
             result_dict = temp_dict.pop()
         except TypeError:
@@ -171,7 +171,7 @@ class DataHandler(QObject):
         
         self.agile_stock_get_by_isbn = '/' + self.agile_stock_get_by_isbn
         self.api_search = '/api/inventoryitem/isbnsearch' + self.agile_stock_get_by_isbn
-        print(f'inside data item retrieval isbn = {self.agile_stock_get_by_isbn}')
+        #print(f'inside data item retrieval isbn = {self.agile_stock_get_by_isbn}')
         self.url.setScheme(self.scheme)
         self.url.setHost(self.host)
         self.url.setPath(self.api_search)

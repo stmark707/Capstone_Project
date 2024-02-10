@@ -5,6 +5,7 @@ from gui_class import ControlGui
 from barcode_v3 import BarcodeIntake
 from database_handler import DataHandler
 from barcode_ip_scanner import SR_1000
+from json import loads, dumps
 
 '''
     TODO: limit logger size for barcode reader
@@ -63,7 +64,8 @@ class Main(QObject):
         self.gui_window.stop_scanning_button.clicked.connect(stop_scanner)
         self.gui_window.clear_results_button.clicked.connect(self.gui_window.clear_all_add_item_fields)
         self.gui_window.search_database_button.clicked.connect(self.grab_isbn)
-        self.gui_window.barcode_result_table.selectionModel().selectionChanged.connect(self.populate_entry_results)
+        #self.gui_window.barcode_result_table.selectionModel().selectionChanged.connect(self.populate_entry_results)
+        self.gui_window.barcode_result_table.cellClicked.connect(self.row_tracker)
         #self.gui_window.remove_item_table.selectionModel().selectionChanged.connect(self.item_to_delete)
         self.gui_window.remove_selected_item_button.clicked.connect(self.item_to_delete)
         self.gui_window.submit_items_button.clicked.connect(self.add_item_to_database)
@@ -76,15 +78,24 @@ class Main(QObject):
         self.data_handler.agile_stock_get_by_id = self.gui_window.search_database_input_box.text()
         self.data_handler.data_item_retrieval_isbn()
         self.gui_window.search_database_input_box.clear()
+      
+    def row_tracker(self, row, column):
+        json_list = dumps(self.gui_window.item_result_object_list)
+        result_item = loads(json_list)[row]
+        self._populate_entry_results(result_item)
         
-    def populate_entry_results(self):
+        
+          
+    def _populate_entry_results(self, selected_book):
         #print('inside populate entries')
         #print(f'\ninside main, populate entries {self.gui_window.items_for_database}\n')
-        for (key, value) in self.gui_window.items_for_database.items():
+        for (key, value) in selected_book.items():
             if value != '':
-                self.information_storage[key] = self.gui_window.items_for_database.get(key)
-                #print(f'\ninside populate enrty results {self.information_storage}\n')
-        self.gui_window.write_selected_item_to_add_entry_fields()
+                self.information_storage[key] = selected_book.get(key)
+                
+            
+        #print(f'\ninside populate enrty results {self.information_storage}\n')
+        
           
     def add_item_to_database(self):
         check_value = self.gui_window.isbn_input_box.text()
