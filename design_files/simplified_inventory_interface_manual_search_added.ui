@@ -578,7 +578,8 @@ border: None;</string>
                  <item>
                   <widget class="QFrame" name="isbn_input_frame">
                    <property name="styleSheet">
-                    <string notr="true">background-color: none;</string>
+                    <string notr="true">background-color: none;
+border: None;</string>
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
@@ -611,7 +612,8 @@ border-color:black;</string>
                  <item>
                   <widget class="QFrame" name="barcode_search_button_frame">
                    <property name="styleSheet">
-                    <string notr="true">background-color: none;</string>
+                    <string notr="true">background-color: none;
+border:none;</string>
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>

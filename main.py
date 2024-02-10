@@ -101,7 +101,7 @@ class Main(QObject):
         check_value = self.gui_window.isbn_input_box.text()
         check_isbn = self.information_storage.get('ISBN')
         if check_value == check_isbn:
-            print(self.information_storage)
+            #print(self.information_storage)
             self.data_handler.post_request(self.information_storage)
         elif check_value:
             data_from_fields = self.gui_window.grab_input_fields()
@@ -112,7 +112,7 @@ class Main(QObject):
             return
         
     def item_to_delete(self):
-        print(f'id to delete {self.data_handler.id_to_delete} {type(self.data_handler.id_to_delete)}')
+        #print(f'id to delete {self.data_handler.id_to_delete} {type(self.data_handler.id_to_delete)}')
         self.data_handler.delete_item_by_id()
         self.gui_window.clear_deleted_item_table()
         

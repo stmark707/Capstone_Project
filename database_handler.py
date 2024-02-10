@@ -203,13 +203,13 @@ class DataHandler(QObject):
         
     def delete_item_by_id(self):
         self.delete_item["delete_book_id"] = self.id_to_delete
-        print(f'contents inside delete item {self.delete_item}')
+        #print(f'contents inside delete item {self.delete_item}')
         self.delete_item = [self.delete_item]
         
         self.id_to_delete = '/' + str(self.id_to_delete)
         
         self.id_search = '/api/inventoryitem' + self.id_to_delete
-        print(f'inside data item retrieval id = {self.id_to_delete}')
+        #print(f'inside data item retrieval id = {self.id_to_delete}')
         self.url.setScheme(self.scheme)
         self.url.setHost(self.host)
         self.url.setPath(self.id_search)
