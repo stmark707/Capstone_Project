@@ -514,7 +514,7 @@ QPushButton:hover:!pressed#stop_scanning_button
               <item>
                <widget class="QFrame" name="main_background_frame">
                 <property name="styleSheet">
-                 <string notr="true">background-color: rgba(250, 251,252, .85);</string>
+                 <string notr="true">background-color: #7f8a9b;</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -557,7 +557,7 @@ border: none;</string>
                     <item>
                      <widget class="QLabel" name="barcode_search_title_label">
                       <property name="styleSheet">
-                       <string notr="true">color: black;
+                       <string notr="true">color: white;
 font-family: &quot;SourceSansPro-Bold&quot;;
 font-weight: 600;
 background-color: none;
@@ -917,7 +917,7 @@ QPushButton:hover:!pressed#launch_website_button
           <item>
            <widget class="QStackedWidget" name="database_actions_stacked_widget">
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="add_item_pane">
              <property name="styleSheet">
