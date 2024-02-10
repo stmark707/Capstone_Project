@@ -57,6 +57,7 @@ class BarcodeIntake(QObject):
         
         try:
             for offer in data['items'][0]['offers']: # I want to get 5 different titles from the offer section And does not contain the word By or by 
+                print(f'\n\n inside barcode lookup for loop {self.titleEntry}')
                 if (len(self.titleEntry) < 5) & (offer["title"].title() not in self.titleEntry) & (f'{self.book_info["AUTHOR"]}' not in offer["title"].title()):
                     self.titleEntry.append(offer["title"].title())
                     
@@ -64,7 +65,8 @@ class BarcodeIntake(QObject):
             print('Error in barcode lookup')
             return
                 
-        title = (max(self.titleEntry, key=len))
+        title = max(self.titleEntry, key=len)
+       
         self.book_info['TITLE'] = title.replace(',', ' ').replace("'",'')
         
         self.book_info['ISBN'] = data['items'][0]['isbn']
@@ -76,17 +78,18 @@ class BarcodeIntake(QObject):
         #TODO: update when publisheer and edition is ready
         display_list = []
         place_holder = 'NULL'
+        
         display_list.append(self.book_info['TITLE'])
         display_list.append(self.book_info['AUTHOR'])
         display_list.append(self.book_info['GENRE'])
         display_list.append(self.book_info['PUBLISHER'])
-        
+        print(f'inside barcode display list {display_list}') 
        
         self.book_stats.emit(self.book_info)
         self.finished_method.emit()
         self.search_results.emit(display_list)
         self.finished_method.emit()
-            
+        self.titleEntry = []
     
     def _getAuthor(self):
 

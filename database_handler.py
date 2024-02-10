@@ -1,5 +1,5 @@
 from gui_class import ControlGui
-from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot, QUrl, QJsonDocument
+from PyQt5.QtCore import QObject, QUrl, QJsonDocument
 from PyQt5.QtNetwork import QNetworkAccessManager, QNetworkRequest, QNetworkReply
 from json import loads
 

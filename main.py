@@ -7,9 +7,7 @@ from database_handler import DataHandler
 from barcode_ip_scanner import SR_1000
 
 '''
-    TODO: Ensure we only see a 13 digit barcode, no partials.
-    TODO: redo table clear
-    TODO: fix retrieval results from isbn or id
+    TODO: limit logger size for barcode reader
 
 '''
 

@@ -141,7 +141,7 @@ class ControlGui(QtWidgets.QMainWindow):
         row_count = self.barcode_result_table.rowCount()
         self.barcode_result_table.insertRow(row_count)
         
-        
+        print(f'inside barcode search table {barcode_search_results}')
         
         for item in range(4):
             temp = QTableWidgetItem(barcode_search_results[item])

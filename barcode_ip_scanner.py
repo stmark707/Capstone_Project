@@ -127,6 +127,7 @@ class SR_1000(QObject):
                 get_data = list(get_data)
                 barcode = get_data[1]
                 self.barcode = barcode[3:-4]
+                
         except CommError:
             return
         except TypeError:
